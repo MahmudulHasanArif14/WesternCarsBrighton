@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Phone, ArrowRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { SITE } from "@/lib/constants";

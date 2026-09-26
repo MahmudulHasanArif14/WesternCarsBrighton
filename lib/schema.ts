@@ -43,6 +43,25 @@ export const localBusinessSchema = {
   additionalType: "https://schema.org/TaxiService",
 };
 
+export const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE.url}/#organization`,
+  name: SITE.legalName,
+  url: SITE.url,
+  logo: `${SITE.url}/images/logo.png`,
+  email: SITE.email,
+  telephone: "+441273220220",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    postalCode: SITE.address.postcode,
+    addressCountry: SITE.address.country,
+  },
+  sameAs: [SITE.social.facebook],
+};
+
 export const serviceSchema = (service: Service) => ({
   "@context": "https://schema.org",
   "@type": "Service",

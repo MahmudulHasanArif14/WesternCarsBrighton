@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, Compass, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Phone, ArrowRight } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 
 export default function Header() {
@@ -24,7 +25,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Announcement bar */}
       <div className="bg-ink-900 text-sand-100 text-xs sm:text-sm">
         <div className="container-x py-2 flex items-center justify-center gap-2">
           <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-forest-400 animate-pulse" />
@@ -35,7 +35,11 @@ export default function Header() {
       </div>
 
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/85 backdrop-blur-xl border-b border-sand-100 shadow-[0_1px_0_rgba(212,163,115,0.08)]" : "bg-background/60 backdrop-blur-md border-b border-transparent"}`}
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-background/85 backdrop-blur-xl border-b border-sand-100 shadow-[0_1px_0_rgba(212,163,115,0.08)]"
+            : "bg-background/60 backdrop-blur-md border-b border-transparent"
+        }`}
       >
         <div className="container-x">
           <div className="flex justify-between items-center h-16 md:h-20">
@@ -44,10 +48,14 @@ export default function Header() {
               className="group flex items-center gap-2.5 shrink-0"
               aria-label="Western Cars Brighton home"
             >
-              <span className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-sand-300 to-sand-500 flex items-center justify-center shadow-[0_4px_12px_rgba(212,163,115,0.4)] group-hover:shadow-[0_6px_18px_rgba(212,163,115,0.55)] transition-shadow">
-                <Compass className="w-5 h-5 text-ink-900" strokeWidth={2.5} />
-                <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-forest-800 border-2 border-background" />
-              </span>
+              <Image
+                src="/images/logo.png"
+                alt="Western Cars Brighton logo"
+                width={40}
+                height={40}
+                priority
+                className="w-10 h-10 rounded-xl object-contain"
+              />
               <span className="flex flex-col leading-none">
                 <span className="font-display text-lg font-semibold text-ink-900 tracking-tight">
                   Western Cars
@@ -107,7 +115,9 @@ export default function Header() {
         </div>
 
         <div
-          className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-500 ease-out border-t border-sand-100 bg-background ${open ? "max-h-[640px] opacity-100" : "max-h-0 opacity-0"}`}
+          className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-500 ease-out border-t border-sand-100 bg-background ${
+            open ? "max-h-[640px] opacity-100" : "max-h-0 opacity-0"
+          }`}
         >
           <nav className="px-4 py-4 space-y-1" aria-label="Mobile">
             {NAV_LINKS.map((link, i) => (
@@ -115,7 +125,9 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`block px-3 py-2.5 text-base font-medium text-ink-700 rounded-lg hover:text-ink-900 hover:bg-sand-50 transition-colors ${open ? "animate-fade-up" : ""}`}
+                className={`block px-3 py-2.5 text-base font-medium text-ink-700 rounded-lg hover:text-ink-900 hover:bg-sand-50 transition-colors ${
+                  open ? "animate-fade-up" : ""
+                }`}
                 style={{ animationDelay: `${i * 50}ms` }}
               >
                 {link.name}

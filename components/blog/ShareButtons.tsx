@@ -67,7 +67,6 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
   );
 }
 
-/* Inline brand SVGs (lucide dropped brand icons) */
 function FacebookIcon() {
   return (
     <svg

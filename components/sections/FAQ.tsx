@@ -41,11 +41,17 @@ export default function FAQ({
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-sand-600 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    className={`w-5 h-5 text-sand-600 shrink-0 transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
                 <div
-                  className={`grid transition-all duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                  className={`grid transition-all duration-500 ease-out ${
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
                 >
                   <div className="overflow-hidden">
                     <p className="px-5 pb-5 text-ink-600 leading-relaxed">

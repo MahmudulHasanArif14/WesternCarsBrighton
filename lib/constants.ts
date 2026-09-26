@@ -1,3 +1,5 @@
+import type { NavLink } from "@/types";
+
 export const SITE = {
   name: "Western Cars Brighton",
   legalName: "Western Cars Private Hire Limited",
@@ -18,7 +20,7 @@ export const SITE = {
   social: { facebook: "https://www.facebook.com/westerncarscrawley" },
 } as const;
 
-export const NAV_LINKS = [
+export const NAV_LINKS: NavLink[] = [
   { name: "Home", href: "/" },
   { name: "Airport Transfers", href: "/airport-transfers-brighton/" },
   { name: "Corporate", href: "/corporate-taxi-accounts-brighton/" },
@@ -32,6 +34,6 @@ export const NAV_LINKS = [
 export const STATS = [
   { value: "2007", label: "Founded" },
   { value: "24/7", label: "Availability" },
-  { value: "5★", label: "Rated Service" },
+  { value: "★★★★★", label: "Rated Service" },
   { value: "BN1", label: "Local Base" },
-];
+] as const;

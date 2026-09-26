@@ -1,11 +1,10 @@
 @import "tailwindcss";
 
 /* ============================================
-   NomadKit Design System — @theme tokens
-   Tailwind v4.3 CSS-first configuration
+   NomadKit Design System — Tailwind v4.3
    ============================================ */
 @theme {
-    /* Brand palette */
+    /* Sand (primary) */
     --color-sand-50: #FBF6EF;
     --color-sand-100: #F5EAD9;
     --color-sand-200: #EBD5B3;
@@ -17,6 +16,7 @@
     --color-sand-800: #664328;
     --color-sand-900: #4A3120;
 
+    /* Ocean (secondary) */
     --color-ocean-50: #ECFEFF;
     --color-ocean-100: #CFFAFE;
     --color-ocean-200: #A5F3FC;
@@ -28,6 +28,7 @@
     --color-ocean-800: #155E75;
     --color-ocean-900: #164E63;
 
+    /* Forest (tertiary) */
     --color-forest-50: #F0FDF4;
     --color-forest-100: #DCFCE7;
     --color-forest-200: #BBF7D0;
@@ -39,6 +40,7 @@
     --color-forest-800: #166534;
     --color-forest-900: #14532D;
 
+    /* Ink (neutrals) */
     --color-ink-50: #F8FAFC;
     --color-ink-100: #F1F5F9;
     --color-ink-200: #E2E8F0;
@@ -67,11 +69,10 @@
     --shadow-card-hover: 0 4px 8px rgba(15, 23, 42, 0.04), 0 20px 40px -12px rgba(212, 163, 115, 0.25);
     --shadow-glow: 0 0 0 1px rgba(212, 163, 115, 0.2), 0 20px 60px -20px rgba(212, 163, 115, 0.5);
 
-    /* Animation */
+    /* Animations */
     --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
     --animate-fade-in: fade-in 0.6s ease-out both;
     --animate-float: float 6s ease-in-out infinite;
-    --animate-marquee: marquee 40s linear infinite;
 
     @keyframes fade-up {
         0% {
@@ -106,16 +107,6 @@
             transform: translateY(-10px);
         }
     }
-
-    @keyframes marquee {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-50%);
-        }
-    }
 }
 
 @layer base {
@@ -142,7 +133,6 @@
         color: var(--color-ink-900);
     }
 
-    /* Buttons use default cursor in v4 — restore pointer for clarity */
     button:not(:disabled),
     [role="button"]:not(:disabled) {
         cursor: pointer;
@@ -230,31 +220,12 @@
     }
 }
 
-@utility surface-warm {
-    background-image: linear-gradient(to bottom, rgba(251, 246, 239, 0.6), var(--color-background), var(--color-background));
-}
-
 @utility bg-grain {
     background-image: radial-gradient(rgba(212, 163, 115, 0.08) 1px, transparent 1px);
     background-size: 24px 24px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-
 @layer components {
-    /* ...existing utilities... */
-
     .prose-western {
         @apply text-ink-700 leading-relaxed;
     }
@@ -298,5 +269,17 @@
 
     .prose-western strong {
         @apply font-semibold text-ink-900;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

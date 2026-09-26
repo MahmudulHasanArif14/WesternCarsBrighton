@@ -3,8 +3,9 @@ import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import MobileStickyCTA from "@/components/layout/MobileStickyCTA";
 import { SITE } from "@/lib/constants";
-import { localBusinessSchema } from "@/lib/schema";
+import { localBusinessSchema, organizationSchema } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,14 +35,10 @@ export const metadata: Metadata = {
     "Brighton to Gatwick transfer",
     "corporate taxi Brighton",
     "wheelchair accessible taxi Brighton",
-    "Brigton taxi service",
+    "Brighton taxi service",
     "Brighton airport transfer",
     "Brighton taxi company",
-    "Brighton taxi service",
-    "Brighton taxi hire",
     "Brighton taxi booking",
-    "Brighton taxi fares",
-    "Brighton taxi prices",
   ],
   openGraph: {
     type: "website",
@@ -84,6 +81,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: "#D4A373",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -104,6 +102,12 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
       </head>
       <body className="font-sans bg-background text-ink-800">
         <a
@@ -113,8 +117,11 @@ export default function RootLayout({
           Skip to content
         </a>
         <Header />
-        <main id="main">{children}</main>
+        <main id="main" className="pb-20 lg:pb-0">
+          {children}
+        </main>
         <Footer />
+        <MobileStickyCTA />
       </body>
     </html>
   );

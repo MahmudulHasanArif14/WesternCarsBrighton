@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import TrustSignals from "@/components/sections/TrustSignals";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Testimonials from "@/components/sections/Testimonials";
@@ -17,6 +18,7 @@ export default function HomePage() {
         }}
       />
       <Hero />
+      <TrustSignals />
       <ServicesGrid />
       <WhyChooseUs />
       <Testimonials />

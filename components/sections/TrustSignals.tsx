@@ -9,15 +9,15 @@ const SIGNALS = [
 
 export default function TrustSignals() {
   return (
-    <section className="bg-white border-b border-gray-100">
+    <section className="bg-background border-b border-sand-100">
       <div className="container-x py-6">
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {SIGNALS.map(({ icon: Icon, label }) => (
             <li
               key={label}
-              className="flex items-center justify-center gap-2 text-sm font-medium text-gray-700"
+              className="flex items-center justify-center gap-2 text-sm font-medium text-ink-700"
             >
-              <Icon className="w-5 h-5 text-brand-700 shrink-0" />
+              <Icon className="w-5 h-5 text-ocean-600 shrink-0" />
               <span>{label}</span>
             </li>
           ))}

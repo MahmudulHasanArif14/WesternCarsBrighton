@@ -1,18 +1,16 @@
 import Image from "next/image";
-import { Shield, Phone, ArrowRight, Star, MapPin } from "lucide-react";
+import { Phone, ArrowRight, Star, MapPin } from "lucide-react";
 import { SITE, STATS } from "@/lib/constants";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-sand-50">
-      {/* Warm backdrop */}
       <div className="absolute inset-0 bg-gradient-to-br from-sand-100 via-background to-ocean-50/40" />
       <div
         className="absolute inset-0 bg-grain opacity-60"
         aria-hidden="true"
       />
 
-      {/* Blurred blobs */}
       <div
         className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sand-300/40 blur-3xl"
         aria-hidden="true"
@@ -24,7 +22,6 @@ export default function Hero() {
 
       <div className="relative container-x py-16 md:py-24 lg:py-28">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Copy */}
           <div className="lg:col-span-7 max-w-3xl">
             <span className="animate-fade-up inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-ink-700 mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-forest-500 animate-pulse" />
@@ -88,39 +85,39 @@ export default function Hero() {
             </dl>
           </div>
 
-          {/* Visual */}
-          <div className="hidden lg:block lg:col-span-5">
+          <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative animate-float">
               <div
                 className="absolute -inset-4 bg-sand-400/20 blur-3xl rounded-full"
                 aria-hidden="true"
               />
-              <div className="relative rounded-3xl overflow-hidden ring-1 ring-sand-200/50 shadow-glow">
+              <div className="relative rounded-3xl bg-gradient-to-br from-sand-100 via-white to-ocean-50 p-8 ring-1 ring-sand-200/50 shadow-glow">
                 <Image
-                  src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80"
-                  alt="Professional chauffeur opening the door of a private hire vehicle for a passenger"
+                  src="/images/phoneImage.png"
+                  alt="Western Cars Brighton booking app shown on a smartphone"
                   width={800}
                   height={1000}
                   sizes="(min-width: 1024px) 40vw, 0vw"
-                  className="w-full h-[520px] object-cover"
+                  className="w-full h-auto max-h-[600px] object-contain drop-shadow-2xl"
                   priority
                 />
-                <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-sand-400 flex items-center justify-center shrink-0">
-                      <MapPin className="w-5 h-5 text-ink-900" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-xs font-medium text-ink-500">
-                        Serving Brighton &amp; Hove
-                      </p>
-                      <a
-                        href={SITE.phoneLink}
-                        className="font-display text-base font-semibold text-ink-900 hover:text-sand-700 transition-colors"
-                      >
-                        {SITE.phone}
-                      </a>
-                    </div>
+              </div>
+
+              <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-sand-400 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-ink-900" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs font-medium text-ink-500">
+                      Serving Brighton &amp; Hove
+                    </p>
+                    <a
+                      href={SITE.phoneLink}
+                      className="font-display text-base font-semibold text-ink-900 hover:text-sand-700 transition-colors"
+                    >
+                      {SITE.phone}
+                    </a>
                   </div>
                 </div>
               </div>
@@ -129,7 +126,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Wave bottom */}
       <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
         <svg viewBox="0 0 1440 60" fill="none" className="w-full">
           <path

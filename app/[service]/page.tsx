@@ -7,8 +7,6 @@ import { SERVICES, getServiceBySlug } from "@/lib/services";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
 
-// Only pre-render the known service slugs.
-// Unknown slugs automatically 404 under Cache Components — no need for `dynamicParams = false`.
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ service: s.slug }));
 }
@@ -69,7 +67,10 @@ export default async function ServicePage({ params }: PageProps) {
           __html: JSON.stringify(
             breadcrumbSchema([
               { name: "Home", url: SITE.url },
-              { name: service.shortTitle, url: `${SITE.url}/${service.slug}/` },
+              {
+                name: service.shortTitle,
+                url: `${SITE.url}/${service.slug}/`,
+              },
             ]),
           ),
         }}

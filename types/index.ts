@@ -18,6 +18,7 @@ export interface FAQ {
   question: string;
   answer: string;
 }
+
 export interface Testimonial {
   name: string;
   location: string;
@@ -25,6 +26,7 @@ export interface Testimonial {
   rating: number;
   date?: string;
 }
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -35,11 +37,13 @@ export interface BlogPost {
   author: string;
   readingTime: string;
 }
+
 export interface NavLink {
   name: string;
   href: string;
   children?: NavLink[];
 }
+
 export interface Stat {
   value: string;
   label: string;
