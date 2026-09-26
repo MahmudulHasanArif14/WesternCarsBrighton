@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
+  reactCompiler: true,
   cacheComponents: true, // Next.js 16.3 Cache Components
 
   images: {
@@ -12,6 +13,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
     ],
     minimumCacheTTL: 14400,
+  },
+
+  experimental: {
+    turbopackRustReactCompiler: true, // Native Rust — no Babel plugin needed
   },
 
   async redirects() {

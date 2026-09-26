@@ -2,9 +2,10 @@ import Link from "next/link";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { SITE, NAV_LINKS } from "@/lib/constants";
 import { SERVICES } from "@/lib/services";
+import { getCurrentYear } from "@/lib/get-year";
 
-export default function Footer() {
-  const year = new Date().getFullYear();
+export default async function Footer() {
+  const year = await getCurrentYear();
 
   return (
     <footer className="bg-ink-900 text-ink-300">

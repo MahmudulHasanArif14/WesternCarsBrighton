@@ -250,3 +250,53 @@
         scroll-behavior: auto !important;
     }
 }
+
+
+@layer components {
+    /* ...existing utilities... */
+
+    .prose-western {
+        @apply text-ink-700 leading-relaxed;
+    }
+
+    .prose-western h2 {
+        @apply font-display text-2xl md:text-3xl font-semibold text-ink-900 mt-12 mb-4 text-balance;
+    }
+
+    .prose-western h3 {
+        @apply font-display text-xl md:text-2xl font-semibold text-ink-900 mt-10 mb-3;
+    }
+
+    .prose-western p {
+        @apply my-5 text-pretty;
+    }
+
+    .prose-western a {
+        @apply text-ocean-700 font-medium underline decoration-sand-400 decoration-2 underline-offset-2 hover:decoration-ocean-600 transition-colors;
+    }
+
+    .prose-western ul {
+        @apply my-6 space-y-3;
+    }
+
+    .prose-western ul li {
+        @apply relative pl-6;
+    }
+
+    .prose-western ul li::before {
+        content: "";
+        @apply absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-sand-500;
+    }
+
+    .prose-western ol {
+        @apply my-6 space-y-3 list-decimal pl-6 marker:text-sand-600 marker:font-semibold;
+    }
+
+    .prose-western blockquote {
+        @apply border-l-4 border-sand-400 pl-5 italic text-ink-600 my-8;
+    }
+
+    .prose-western strong {
+        @apply font-semibold text-ink-900;
+    }
+}
