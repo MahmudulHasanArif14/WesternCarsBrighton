@@ -1,69 +1,22 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight, Check, Plane, Users, BriefcaseBusiness, ShieldCheck, Clock3, Smartphone, MapPin } from 'lucide-react';
+import { BookingCTA } from './ui';
 
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+const BOOKING='https://westerncars.webbooker.icabbi.com/';
+const APP='https://icab.bi/Western';
+const wheel='https://westerncarsbrighton.co.uk/wp-content/uploads/2026/05/Brighton-Wheel.png';
+const appImg='https://westerncarsbrighton.co.uk/wp-content/uploads/2021/01/Western-Cars-Mobile-App.png';
+
+export default function Home(){return <main>
+ <section className="gradient-hero grid-fade relative overflow-hidden text-white"><div className="container-wide grid min-h-[650px] items-center gap-12 py-20 lg:grid-cols-[1.02fr_.98fr]"><div className="relative z-10"><div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur"><Clock3 size={16}/> Brighton & Hove · 24/7</div><h1 className="text-balance text-5xl font-black tracking-[-.04em] sm:text-6xl lg:text-7xl">Your local taxi,<br/><span className="text-blue-300">ready when you are.</span></h1><p className="mt-6 max-w-xl text-lg leading-8 text-blue-50">Reliable private hire for Brighton & Hove, airport transfers, business travel and journeys across Sussex and the UK.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href={BOOKING} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 font-bold text-[#071a2f] shadow-xl">Book online <ArrowRight size={18}/></a><a href="tel:+441273220220" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 font-bold backdrop-blur"><span className="grid size-7 place-items-center rounded-full bg-white text-[#0b63ce]"><span className="text-xs">☎</span></span> 01273 220220</a></div><div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-blue-100"><span className="flex items-center gap-2"><Check size={16}/> Fully licensed</span><span className="flex items-center gap-2"><Check size={16}/> Local & long distance</span><span className="flex items-center gap-2"><Check size={16}/> Airport transfers</span></div></div><div className="relative hidden min-h-[520px] lg:block"><div className="absolute inset-8 overflow-hidden rounded-[2rem] border border-white/15 shadow-2xl"><Image src={wheel} alt="Brighton seafront and Brighton Wheel" fill priority className="object-cover" sizes="(max-width: 1024px) 0px, 50vw"/></div><div className="absolute -bottom-1 left-2 rounded-2xl border border-white/15 bg-white/95 p-5 text-[#071a2f] shadow-2xl"><div className="text-2xl font-black">Since 2007</div><div className="text-sm text-slate-600">Serving Brighton & Sussex</div></div></div></div></section>
+ <section className="border-b border-slate-100 bg-white"><div className="container-wide grid divide-y divide-slate-200 py-2 sm:grid-cols-3 sm:divide-x sm:divide-y-0"><Feature icon={<Clock3/>} title="24/7 service" text="Book day or night."/><Feature icon={<Plane/>} title="Airport transfers" text="Gatwick, Heathrow & more."/><Feature icon={<Users/>} title="Groups welcome" text="MPVs and larger vehicles."/></div></section>
+ <section className="section"><div className="container-wide"><div className="max-w-2xl"><p className="mb-3 text-sm font-bold uppercase tracking-[.2em] text-[#0b63ce]">Travel with confidence</p><h2 className="text-balance text-4xl font-black tracking-tight text-[#071a2f] md:text-5xl">One local operator for everyday journeys and big trips.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Western Cars provides private hire across Brighton & Hove, with connections to airports, stations, universities, seaports and destinations throughout the UK.</p></div><div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4"><ServiceCard icon={<MapPin/>} title="Local taxi" text="Comfortable journeys around Brighton, Hove and nearby areas." href="/services/"/><ServiceCard icon={<Plane/>} title="Airport transfers" text="Pre-booked journeys to Gatwick, Heathrow, Stansted, Luton and London City." href="/services/"/><ServiceCard icon={<BriefcaseBusiness/>} title="Business travel" text="Corporate accounts, executive cars and straightforward invoicing." href="/services/"/><ServiceCard icon={<Users/>} title="Groups & events" text="MPVs and minibuses for weddings, tours and group travel." href="/services/"/></div></div></section>
+ <section className="bg-[#f4f8fc] py-20"><div className="container-wide grid items-center gap-12 lg:grid-cols-[.9fr_1.1fr]"><div><p className="mb-3 text-sm font-bold uppercase tracking-[.2em] text-[#0b63ce]">Why Western Cars</p><h2 className="text-4xl font-black tracking-tight text-[#071a2f]">A straightforward local service.</h2><div className="mt-8 grid gap-5"><Reason icon={<ShieldCheck/>} title="Licensed private hire" text="A professional service with vetted drivers and a broad fleet."/><Reason icon={<Clock3/>} title="Available around the clock" text="Our booking and support team operate 24 hours a day."/><Reason icon={<Smartphone/>} title="Book your way" text="Use the online booking system, phone us or book through the mobile app."/></div></div><div className="relative overflow-hidden rounded-[2rem] bg-[#071a2f] p-8 md:p-12"><div className="absolute -right-24 -top-24 size-64 rounded-full bg-blue-500/20 blur-3xl"/><div className="relative flex flex-col items-center gap-8 sm:flex-row"><Image src={appImg} width={375} height={430} alt="Western Cars mobile booking app" className="h-auto w-52 drop-shadow-2xl"/><div className="text-white"><p className="text-sm font-bold uppercase tracking-[.2em] text-blue-300">Book on the go</p><h3 className="mt-2 text-3xl font-black">Your taxi in your pocket.</h3><p className="mt-3 leading-7 text-slate-300">The Western Cars app is available for iPhone and Android, powered by iCabbi.</p><a href={APP} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 font-bold text-[#071a2f]">Get the app <ArrowRight size={17}/></a></div></div></div></div></section>
+ <section className="section"><div className="container-wide"><div className="grid gap-6 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm md:grid-cols-[1fr_auto] md:items-center md:p-10"><div><p className="text-sm font-bold uppercase tracking-[.2em] text-[#0b63ce]">Serving Brighton & beyond</p><h2 className="mt-2 text-3xl font-black text-[#071a2f]">From the seafront to the airport.</h2><p className="mt-3 max-w-2xl leading-7 text-slate-600">Based at Mocatta House in Brighton, we serve Brighton & Hove, East and West Sussex, major train stations and UK airports.</p></div><Link href="/contact/" className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-6 py-3 font-bold text-[#071a2f] hover:bg-slate-50">Contact us <ArrowRight size={17}/></Link></div></div></section>
+ <BookingCTA/>
+ <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://westerncarsbrighton.co.uk/#business","name":"Western Cars Brighton","url":"https://westerncarsbrighton.co.uk/","telephone":"+44 1273 220220","email":"info@westerncarsbrighton.co.uk","foundingDate":"2007","address":{"@type":"PostalAddress","streetAddress":"Mocatta House, Trafalgar Place","addressLocality":"Brighton","postalCode":"BN1 4DU","addressCountry":"GB"},"areaServed":["Brighton","Hove","East Sussex","West Sussex"],"openingHours":"Mo-Su 00:00-23:59","priceRange":"££","sameAs":["https://icab.bi/Western"]})}} />
+ </main>}
+function Feature({icon,title,text}:{icon:React.ReactNode;title:string;text:string}){return <div className="flex items-center gap-4 px-5 py-5"><div className="text-[#0b63ce]">{icon}</div><div><div className="font-bold text-[#071a2f]">{title}</div><div className="text-sm text-slate-500">{text}</div></div></div>}
+function ServiceCard({icon,title,text,href}:{icon:React.ReactNode;title:string;text:string;href:string}){return <Link href={href} className="group rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5"><div className="mb-8 grid size-11 place-items-center rounded-xl bg-blue-50 text-[#0b63ce]">{icon}</div><h3 className="text-xl font-black text-[#071a2f]">{title}</h3><p className="mt-2 leading-7 text-slate-600">{text}</p><span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#0b63ce]">Learn more <ArrowRight size={15} className="transition group-hover:translate-x-1"/></span></Link>}
+function Reason({icon,title,text}:{icon:React.ReactNode;title:string;text:string}){return <div className="flex gap-4"><div className="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-[#0b63ce] shadow-sm">{icon}</div><div><h3 className="font-black text-[#071a2f]">{title}</h3><p className="mt-1 leading-6 text-slate-600">{text}</p></div></div>}
