@@ -97,6 +97,10 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <head>
+        <meta
+          name="apple-mobile-web-app-title"
+          content="Western Cars Brighton"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
