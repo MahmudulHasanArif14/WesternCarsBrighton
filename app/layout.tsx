@@ -7,6 +7,7 @@ import MobileStickyCTA from "@/components/layout/MobileStickyCTA";
 import { SITE } from "@/lib/constants";
 import { localBusinessSchema, organizationSchema } from "@/lib/schema";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,7 +75,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: { canonical: SITE.url },
+  alternates: { canonical: "/" },
 };
 
 export const viewport: Viewport = {
@@ -129,6 +130,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <MobileStickyCTA />
+        <Analytics />
       </body>
     </html>
   );
