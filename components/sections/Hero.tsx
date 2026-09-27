@@ -1,132 +1,259 @@
-import Image from "next/image";
-import { Phone, ArrowRight, Star, MapPin } from "lucide-react";
-import { SITE, STATS } from "@/lib/constants";
+import {
+  ShieldCheck,
+  Calendar,
+  Phone,
+  ArrowRight,
+  Clock,
+  MapPin,
+  Star,
+  Navigation,
+  CarFront,
+} from "lucide-react";
 
-export default function Hero() {
+import Button from "@/components/ui/Button";
+import HeroVisual from "../sections/HeroVisual";
+import { SITE } from "@/lib/constants";
+
+const stats = [
+  {
+    icon: Calendar,
+    label: "Established",
+    value: "2007",
+  },
+  {
+    icon: Clock,
+    label: "Available",
+    value: "24/7",
+  },
+  {
+    icon: Star,
+    label: "Rated Service",
+    value: "5.0",
+  },
+  {
+    icon: MapPin,
+    label: "Local Base",
+    value: "BN1",
+  },
+];
+
+export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-sand-50">
-      <div className="absolute inset-0 bg-gradient-to-br from-sand-100 via-background to-ocean-50/40" />
+    <section className="relative isolate overflow-hidden bg-white">
+      {/* ================= BACKGROUND ================= */}
+
       <div
-        className="absolute inset-0 bg-grain opacity-60"
         aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_75%_35%,rgba(191,219,254,0.55),transparent_34%),linear-gradient(135deg,#ffffff_0%,#f8fbff_48%,#eef6ff_100%)]"
       />
 
       <div
-        className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sand-300/40 blur-3xl"
         aria-hidden="true"
+        className="pointer-events-none absolute -right-40 top-10 -z-10 h-[520px] w-[520px] rounded-full bg-blue-200/30 blur-[120px]"
       />
+
       <div
-        className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-ocean-200/40 blur-3xl"
         aria-hidden="true"
+        className="pointer-events-none absolute -left-40 bottom-0 -z-10 h-[420px] w-[420px] rounded-full bg-blue-100/40 blur-[110px]"
       />
 
-      <div className="relative container-x py-16 md:py-24 lg:py-28">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          <div className="lg:col-span-7 max-w-3xl">
-            <span className="animate-fade-up inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-white-700 mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-forest-500 animate-pulse" />
-              Licensed Private Hire Operator — Brighton &amp; Hove
-            </span>
+      {/* ================= MAIN ================= */}
 
-            <h1 className="animate-fade-up animate-delay-100 font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight text-white-900 text-balance">
-              Your Trusted Taxi in{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand-500 via-sand-600 to-ocean-600">
-                Brighton &amp; Hove
+      <div className="container-x relative py-10 sm:py-14 lg:py-16 xl:py-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] xl:gap-16">
+          {/* =====================================================
+              LEFT CONTENT
+          ====================================================== */}
+
+          <div className="relative z-10">
+            {/* License Badge */}
+
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/90 px-4 py-2 shadow-sm backdrop-blur">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500">
+                <ShieldCheck
+                  className="h-4 w-4 text-white"
+                  aria-hidden="true"
+                />
+              </span>
+
+              <span className="text-sm font-semibold text-emerald-700">
+                Licensed Private Hire Operator
+              </span>
+
+              <span className="hidden text-sm text-emerald-600 sm:inline">
+                — Brighton & Hove
+              </span>
+            </div>
+
+            {/* Headline */}
+
+            <h1 className="mt-6 max-w-3xl text-[44px] font-bold leading-[0.98] tracking-[-0.04em] text-[#0F172A] sm:text-[58px] lg:text-[62px] xl:text-[68px]">
+              Your Trusted Taxi
+              <br />
+              in{" "}
+              <span className="relative inline-block text-[#2563EB]">
+                Brighton & Hove
+                <span className="absolute -bottom-1 left-0 h-[5px] w-[72%] rounded-full bg-blue-200/80" />
               </span>
             </h1>
 
-            <p className="animate-fade-up animate-delay-200 mt-6 text-lg md:text-xl text-white-600 leading-relaxed max-w-2xl text-pretty">
+            {/* Description */}
+
+            <p className="mt-7 max-w-xl text-[17px] leading-7 text-[#475569] sm:text-[18px]">
               24/7 private hire, airport transfers, corporate travel, and
               wheelchair-accessible taxis. Fixed prices, professional drivers,
-              and local knowledge since {SITE.founded}.
+              and local knowledge since 2007.
             </p>
 
-            <div className="animate-fade-up animate-delay-300 mt-8 flex flex-col sm:flex-row gap-4">
-              <a
+            {/* CTA */}
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button
                 href={SITE.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-lg px-8 py-4 group"
+                size="lg"
+                className="group h-14 justify-center rounded-xl bg-[#2563EB] px-7 text-white shadow-[0_12px_30px_rgba(37,99,235,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#1D4ED8] hover:shadow-[0_16px_35px_rgba(37,99,235,0.35)]"
               >
-                Book Online Now
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a href={SITE.phoneLink} className="btn-ghost text-lg px-8 py-4">
-                <Phone className="w-5 h-5" aria-hidden="true" />
-                Call {SITE.phone}
-              </a>
+                <Calendar className="h-5 w-5" aria-hidden="true" />
+
+                <span>Book Online Now</span>
+
+                <ArrowRight
+                  className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </Button>
+
+              <Button
+                href={`tel:${SITE.phone}`}
+                variant="secondary"
+                size="lg"
+                className="h-14 justify-center rounded-xl border border-slate-200 bg-white px-7 text-[#2563EB] shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50"
+              >
+                <Phone className="h-5 w-5" aria-hidden="true" />
+
+                <span>
+                  Call{" "}
+                  <strong className="font-semibold">{SITE.phoneDisplay}</strong>
+                </span>
+              </Button>
             </div>
 
-            <div className="animate-fade-up animate-delay-500 mt-8 flex items-center gap-3 text-sm text-white-600">
-              <div className="flex gap-0.5" aria-hidden="true">
+            {/* Rating */}
+
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <div
+                className="flex gap-0.5"
+                role="img"
+                aria-label="Rated 5 out of 5 stars"
+              >
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className="w-4 h-4 fill-sand-500 text-sand-500"
+                    className="h-[19px] w-[19px] fill-blue-600 text-blue-600"
+                    aria-hidden="true"
                   />
                 ))}
               </div>
-              <span>Rated 5★ by Brighton &amp; Hove passengers</span>
+
+              <div className="h-4 w-px bg-slate-300" />
+
+              <p className="text-sm text-slate-500">
+                Rated <span className="font-bold text-slate-800">5★</span> by
+                Brighton & Hove passengers
+              </p>
             </div>
 
-            <dl className="animate-fade-up animate-delay-700 mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
-              {STATS.map((stat) => (
-                <div key={stat.label}>
-                  <dt className="text-sm text-white-500">{stat.label}</dt>
-                  <dd className="font-display text-2xl md:text-3xl font-semibold text-sand-700 mt-1">
-                    {stat.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            {/* =====================================================
+                STATS
+            ====================================================== */}
+
+            <div className="mt-10 grid grid-cols-2 border-y border-slate-200/80 py-5 sm:grid-cols-4">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+
+                return (
+                  <div
+                    key={stat.label}
+                    className={`flex items-center gap-3 py-3 sm:py-0 ${
+                      index !== 0
+                        ? "sm:border-l sm:border-slate-200 sm:pl-5"
+                        : ""
+                    }`}
+                  >
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+
+                    <div>
+                      <p className="text-[11px] font-medium uppercase tracking-wide text-slate-400">
+                        {stat.label}
+                      </p>
+
+                      <p className="mt-0.5 text-lg font-bold text-slate-800">
+                        {stat.value}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Small service indicators */}
+
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500">
+              <div className="flex items-center gap-2">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                  <CarFront className="h-3.5 w-3.5" />
+                </span>
+                Professional Drivers
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                  <Navigation className="h-3.5 w-3.5" />
+                </span>
+                Airport Transfers
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                  <ShieldCheck className="h-3.5 w-3.5" />
+                </span>
+                Safe & Reliable
+              </div>
+            </div>
           </div>
 
-          <div className="hidden lg:block lg:col-span-5 relative">
-            <div className="relative animate-float">
-              <div
-                className="absolute -inset-4 bg-sand-400/20 blur-3xl rounded-full"
-                aria-hidden="true"
-              />
-              <div className="relative rounded-3xl bg-gradient-to-br from-sand-100 via-white to-ocean-50 p-8 ring-1 ring-sand-200/50 shadow-glow">
-                <Image
-                  src="/images/PhoneImage.png"
-                  alt="Western Cars Brighton booking app shown on a smartphone"
-                  width={800}
-                  height={1000}
-                  sizes="40vw"
-                  className="w-full h-auto max-h-[600px] object-contain drop-shadow-2xl"
-                  priority
-                />
-              </div>
+          {/* =====================================================
+              RIGHT VISUAL
+          ====================================================== */}
 
-              <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-sand-400 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-white-900" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-xs font-medium text-white-500">
-                      Serving Brighton &amp; Hove
-                    </p>
-                    <a
-                      href={SITE.phoneLink}
-                      className="font-display text-base font-semibold text-white-900 hover:text-sand-700 transition-colors"
-                    >
-                      {SITE.phone}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="relative min-h-[540px] lg:min-h-[650px]">
+            <HeroVisual />
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
-        <svg viewBox="0 0 1440 60" fill="none" className="w-full">
+      {/* =====================================================
+          BOTTOM WAVE
+      ====================================================== */}
+
+      <div className="relative h-20 overflow-hidden sm:h-24">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="absolute inset-0 h-full w-full"
+        >
           <path
-            d="M0 60V30C240 0 480 0 720 30C960 60 1200 60 1440 30V60H0Z"
-            fill="#FFFDF7"
+            d="M0,75 C220,10 420,110 690,72 C930,38 1150,100 1440,48 L1440,120 L0,120 Z"
+            fill="#2563EB"
+          />
+
+          <path
+            d="M0,91 C250,35 460,122 720,87 C980,53 1190,112 1440,67 L1440,120 L0,120 Z"
+            fill="#1D4ED8"
+            opacity="0.65"
           />
         </svg>
       </div>

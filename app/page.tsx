@@ -1,4 +1,4 @@
-import Hero from "@/components/sections/Hero";
+import { Hero } from "@/components/sections/Hero";
 import TrustSignals from "@/components/sections/TrustSignals";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
