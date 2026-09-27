@@ -48,7 +48,7 @@ export default function Header() {
                 className="w-10 h-10 rounded-xl object-contain"
               />
               <span className="flex flex-col leading-none">
-                <span className="font-display text-lg font-semibold text-ink-900 tracking-tight">
+                <span className="font-display text-lg font-semibold text-white-900 tracking-tight">
                   Western Cars
                 </span>
                 <span className="text-[10px] text-sand-700 font-semibold tracking-[0.18em] uppercase mt-0.5">
@@ -65,7 +65,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="relative px-3 py-2 text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:bg-sand-400 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  className="relative px-3 py-2 text-sm font-medium text-white-600 hover:text-white-900 transition-colors after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:bg-sand-400 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
                 >
                   {link.name}
                 </Link>
@@ -75,7 +75,7 @@ export default function Header() {
             <div className="hidden md:flex items-center gap-3">
               <a
                 href={SITE.phoneLink}
-                className="flex items-center gap-2 text-sm font-semibold text-ink-700 hover:text-ocean-700 transition-colors"
+                className="flex items-center gap-2 text-sm font-semibold text-white-700 hover:text-ocean-700 transition-colors"
                 aria-label={`Call Western Cars Brighton on ${SITE.phone}`}
               >
                 <span className="w-8 h-8 rounded-full bg-ocean-50 flex items-center justify-center">
@@ -96,7 +96,7 @@ export default function Header() {
 
             <button
               onClick={() => setOpen(!open)}
-              className="lg:hidden p-2 -mr-2 text-ink-700 hover:text-ink-900"
+              className="lg:hidden p-2 -mr-2 text-white-700 hover:text-white-900"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
             >
@@ -116,7 +116,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`block px-3 py-2.5 text-base font-medium text-ink-700 rounded-lg hover:text-ink-900 hover:bg-sand-50 transition-colors ${
+                className={`block px-3 py-2.5 text-base font-medium text-white-700 rounded-lg hover:text-white-900 hover:bg-sand-50 transition-colors ${
                   open ? "animate-fade-up" : ""
                 }`}
                 style={{ animationDelay: `${i * 50}ms` }}
@@ -127,7 +127,7 @@ export default function Header() {
             <div className="pt-3 mt-3 border-t border-sand-100 space-y-2">
               <a
                 href={SITE.phoneLink}
-                className="flex items-center gap-3 px-3 py-2.5 text-base font-semibold text-ink-900"
+                className="flex items-center gap-3 px-3 py-2.5 text-base font-semibold text-white-900"
               >
                 <Phone className="w-5 h-5 text-ocean-600" />
                 {SITE.phone}

@@ -23,19 +23,19 @@ export default function Hero() {
       <div className="relative container-x py-16 md:py-24 lg:py-28">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-7 max-w-3xl">
-            <span className="animate-fade-up inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-ink-700 mb-6 shadow-sm">
+            <span className="animate-fade-up inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-white-700 mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-forest-500 animate-pulse" />
               Licensed Private Hire Operator — Brighton &amp; Hove
             </span>
 
-            <h1 className="animate-fade-up animate-delay-100 font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight text-ink-900 text-balance">
+            <h1 className="animate-fade-up animate-delay-100 font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight text-white-900 text-balance">
               Your Trusted Taxi in{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand-500 via-sand-600 to-ocean-600">
                 Brighton &amp; Hove
               </span>
             </h1>
 
-            <p className="animate-fade-up animate-delay-200 mt-6 text-lg md:text-xl text-ink-600 leading-relaxed max-w-2xl text-pretty">
+            <p className="animate-fade-up animate-delay-200 mt-6 text-lg md:text-xl text-white-600 leading-relaxed max-w-2xl text-pretty">
               24/7 private hire, airport transfers, corporate travel, and
               wheelchair-accessible taxis. Fixed prices, professional drivers,
               and local knowledge since {SITE.founded}.
@@ -57,7 +57,7 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="animate-fade-up animate-delay-500 mt-8 flex items-center gap-3 text-sm text-ink-600">
+            <div className="animate-fade-up animate-delay-500 mt-8 flex items-center gap-3 text-sm text-white-600">
               <div className="flex gap-0.5" aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
@@ -72,7 +72,7 @@ export default function Hero() {
             <dl className="animate-fade-up animate-delay-700 mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
               {STATS.map((stat) => (
                 <div key={stat.label}>
-                  <dt className="text-sm text-ink-500">{stat.label}</dt>
+                  <dt className="text-sm text-white-500">{stat.label}</dt>
                   <dd className="font-display text-2xl md:text-3xl font-semibold text-sand-700 mt-1">
                     {stat.value}
                   </dd>
@@ -102,15 +102,15 @@ export default function Hero() {
               <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-sand-400 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-ink-900" />
+                    <MapPin className="w-5 h-5 text-white-900" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs font-medium text-ink-500">
+                    <p className="text-xs font-medium text-white-500">
                       Serving Brighton &amp; Hove
                     </p>
                     <a
                       href={SITE.phoneLink}
-                      className="font-display text-base font-semibold text-ink-900 hover:text-sand-700 transition-colors"
+                      className="font-display text-base font-semibold text-white-900 hover:text-sand-700 transition-colors"
                     >
                       {SITE.phone}
                     </a>

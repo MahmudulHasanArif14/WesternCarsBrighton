@@ -80,10 +80,10 @@ export default async function ServicePage({ params }: PageProps) {
 
       <section className="py-16 md:py-24 bg-background">
         <div className="container-x max-w-4xl">
-          <h2 className="font-display text-2xl md:text-3xl font-semibold text-ink-900">
+          <h2 className="font-display text-2xl md:text-3xl font-semibold text-white-900">
             {service.shortTitle} — what to expect
           </h2>
-          <p className="mt-4 text-ink-700 leading-relaxed">
+          <p className="mt-4 text-white-700 leading-relaxed">
             Western Cars Brighton has been running{" "}
             {service.shortTitle.toLowerCase()} from Brighton &amp; Hove since{" "}
             {SITE.founded}. Every journey is with a DBS-checked, locally-based
@@ -91,14 +91,14 @@ export default async function ServicePage({ params }: PageProps) {
             24/7 availability, and a phone line that&apos;s answered by a real
             person.
           </p>
-          <p className="mt-4 text-ink-700 leading-relaxed">
+          <p className="mt-4 text-white-700 leading-relaxed">
             {service.description}
           </p>
 
-          <h2 className="font-display mt-12 text-2xl md:text-3xl font-semibold text-ink-900">
+          <h2 className="font-display mt-12 text-2xl md:text-3xl font-semibold text-white-900">
             What&apos;s included
           </h2>
-          <ul className="mt-4 space-y-3 text-ink-700">
+          <ul className="mt-4 space-y-3 text-white-700">
             {service.features.map((f) => (
               <li key={f} className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-sand-500 mt-2 shrink-0" />
@@ -107,10 +107,10 @@ export default async function ServicePage({ params }: PageProps) {
             ))}
           </ul>
 
-          <h2 className="font-display mt-12 text-2xl md:text-3xl font-semibold text-ink-900">
+          <h2 className="font-display mt-12 text-2xl md:text-3xl font-semibold text-white-900">
             Book your {service.shortTitle.toLowerCase()} today
           </h2>
-          <p className="mt-4 text-ink-700 leading-relaxed">
+          <p className="mt-4 text-white-700 leading-relaxed">
             Call us on{" "}
             <a
               href={SITE.phoneLink}

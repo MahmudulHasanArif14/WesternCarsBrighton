@@ -162,7 +162,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="relative container-x pt-10 md:pt-14 pb-10 md:pb-14">
           <Link
             href="/blog/"
-            className="animate-fade-up inline-flex items-center gap-2 text-sm font-medium text-ink-500 hover:text-ocean-700 transition-colors mb-6"
+            className="animate-fade-up inline-flex items-center gap-2 text-sm font-medium text-white-500 hover:text-ocean-700 transition-colors mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to blog
@@ -176,15 +176,15 @@ export default async function BlogPostPage({ params }: PageProps) {
               </span>
             </div>
 
-            <h1 className="animate-fade-up animate-delay-200 font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.1] text-ink-900 text-balance">
+            <h1 className="animate-fade-up animate-delay-200 font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.1] text-white-900 text-balance">
               {post.title}
             </h1>
 
-            <p className="animate-fade-up animate-delay-300 mt-5 text-lg md:text-xl text-ink-600 leading-relaxed text-pretty">
+            <p className="animate-fade-up animate-delay-300 mt-5 text-lg md:text-xl text-white-600 leading-relaxed text-pretty">
               {post.excerpt}
             </p>
 
-            <div className="animate-fade-up animate-delay-500 mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-ink-500">
+            <div className="animate-fade-up animate-delay-500 mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white-500">
               <span className="inline-flex items-center gap-1.5">
                 <User className="w-4 h-4" />
                 {post.author}
@@ -229,14 +229,14 @@ export default async function BlogPostPage({ params }: PageProps) {
               {/* Footer meta */}
               <div className="mt-14 pt-8 border-t border-ink-100 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <span className="w-10 h-10 rounded-full bg-sand-400 flex items-center justify-center text-ink-900 font-semibold">
+                  <span className="w-10 h-10 rounded-full bg-sand-400 flex items-center justify-center text-white-900 font-semibold">
                     W
                   </span>
                   <div>
-                    <div className="text-sm font-semibold text-ink-900">
+                    <div className="text-sm font-semibold text-white-900">
                       {post.author}
                     </div>
-                    <div className="text-xs text-ink-500">
+                    <div className="text-xs text-white-500">
                       Licensed private hire since {SITE.founded}
                     </div>
                   </div>
@@ -250,10 +250,10 @@ export default async function BlogPostPage({ params }: PageProps) {
               <div className="sticky top-28 space-y-6">
                 {/* Quick book card */}
                 <div className="card p-6">
-                  <h3 className="font-display text-lg font-semibold text-ink-900">
+                  <h3 className="font-display text-lg font-semibold text-white-900">
                     Ready to book?
                   </h3>
-                  <p className="mt-2 text-sm text-ink-600 leading-relaxed">
+                  <p className="mt-2 text-sm text-white-600 leading-relaxed">
                     Fixed prices, 24/7 service, professional drivers across
                     Brighton &amp; Hove.
                   </p>
@@ -277,7 +277,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
                 {/* Share card */}
                 <div className="card p-6">
-                  <h3 className="text-sm font-semibold text-ink-900 mb-3">
+                  <h3 className="text-sm font-semibold text-white-900 mb-3">
                     Share this article
                   </h3>
                   <ShareButtons url={canonical} title={post.title} />
@@ -293,7 +293,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <section className="py-16 md:py-20 bg-sand-50/60">
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-ink-900 mb-8">
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-white-900 mb-8">
                 Keep reading
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -314,7 +314,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       />
                     </div>
                     <div className="p-6">
-                      <div className="flex items-center gap-4 text-xs text-ink-500">
+                      <div className="flex items-center gap-4 text-xs text-white-500">
                         <span className="inline-flex items-center gap-1.5">
                           <Calendar className="w-3.5 h-3.5" />
                           {formatDate(r.date)}
@@ -324,10 +324,10 @@ export default async function BlogPostPage({ params }: PageProps) {
                           {r.readingTime}
                         </span>
                       </div>
-                      <h3 className="font-display mt-3 text-lg font-semibold text-ink-900 group-hover:text-sand-700 transition-colors text-balance">
+                      <h3 className="font-display mt-3 text-lg font-semibold text-white-900 group-hover:text-white-700 transition-colors text-balance">
                         {r.title}
                       </h3>
-                      <p className="mt-2 text-sm text-ink-600 leading-relaxed">
+                      <p className="mt-2 text-sm text-white-600 leading-relaxed">
                         {r.excerpt}
                       </p>
                     </div>

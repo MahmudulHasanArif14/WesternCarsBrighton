@@ -4,61 +4,60 @@
    NomadKit Design System — Tailwind v4.3
    ============================================ */
 @theme {
-    /* Sand (primary) */
-    --color-sand-50: #FBF6EF;
-    --color-sand-100: #F5EAD9;
-    --color-sand-200: #EBD5B3;
-    --color-sand-300: #E0BF8D;
-    --color-sand-400: #D4A373;
-    --color-sand-500: #C28B54;
-    --color-sand-600: #A97242;
-    --color-sand-700: #875A33;
-    --color-sand-800: #664328;
-    --color-sand-900: #4A3120;
+    --color-sand-50: #F5F7F9;
+    --color-sand-100: #FFFFFF;
+    --color-sand-200: #F5F7F9;
+    --color-sand-300: #E1E4E8;
+    --color-sand-400: #3C58A2;
+    --color-sand-500: #3C58A2;
+    --color-sand-600: #43474E;
+    --color-sand-700: #43474E;
+    --color-sand-800: #333333;
+    --color-sand-900: #333333;
 
     /* Ocean (secondary) */
-    --color-ocean-50: #ECFEFF;
-    --color-ocean-100: #CFFAFE;
-    --color-ocean-200: #A5F3FC;
-    --color-ocean-300: #67E8F9;
-    --color-ocean-400: #22D3EE;
-    --color-ocean-500: #06B6D4;
-    --color-ocean-600: #0891B2;
-    --color-ocean-700: #0E7490;
-    --color-ocean-800: #155E75;
-    --color-ocean-900: #164E63;
+    --color-ocean-50: #F5F7F9;
+    --color-ocean-100: #E8EDF7;
+    --color-ocean-200: #D2DBEF;
+    --color-ocean-300: #AAB9DC;
+    --color-ocean-400: #7F96C7;
+    --color-ocean-500: #3C58A2;
+    --color-ocean-600: #334C8B;
+    --color-ocean-700: #2A3F73;
+    --color-ocean-800: #22345F;
+    --color-ocean-900: #1B294B;
 
     /* Forest (tertiary) */
-    --color-forest-50: #F0FDF4;
-    --color-forest-100: #DCFCE7;
-    --color-forest-200: #BBF7D0;
-    --color-forest-300: #86EFAC;
-    --color-forest-400: #4ADE80;
-    --color-forest-500: #22C55E;
-    --color-forest-600: #16A34A;
-    --color-forest-700: #15803D;
-    --color-forest-800: #166534;
-    --color-forest-900: #14532D;
+    --color-forest-50: #F1FBF3;
+    --color-forest-100: #DDF5E2;
+    --color-forest-200: #BCEBC6;
+    --color-forest-300: #91DBA2;
+    --color-forest-400: #62CB7A;
+    --color-forest-500: #2DB742;
+    --color-forest-600: #249B37;
+    --color-forest-700: #1D7F2D;
+    --color-forest-800: #176523;
+    --color-forest-900: #104B1A;
 
     /* Ink (neutrals) */
-    --color-ink-50: #F8FAFC;
-    --color-ink-100: #F1F5F9;
-    --color-ink-200: #E2E8F0;
-    --color-ink-300: #CBD5E1;
-    --color-ink-400: #94A3B8;
-    --color-ink-500: #64748B;
-    --color-ink-600: #475569;
-    --color-ink-700: #334155;
-    --color-ink-800: #1E293B;
-    --color-ink-900: #0F172A;
+    --color-ink-50: #FFFFFF;
+    --color-ink-100: #F5F7F9;
+    --color-ink-200: #E6E8EB;
+    --color-ink-300: #D1D4D8;
+    --color-ink-400: #A8ADB3;
+    --color-ink-500: #7A7F85;
+    --color-ink-600: #5D5D5D;
+    --color-ink-700: #43474E;
+    --color-ink-800: #333333;
+    --color-ink-900: #222222;
 
     /* Semantic */
-    --color-background: #FFFDF7;
+    --color-background: #F5F7F9;
     --color-surface: #FFFFFF;
-    --color-success: #166534;
+    --color-success: #2DB742;
     --color-warning: #CA8A04;
     --color-error: #DC2626;
-    --color-info: #0891B2;
+    --color-info: #3C58A2;
 
     /* Fonts */
     --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -166,7 +165,7 @@
 @utility btn-primary {
     @apply btn;
     background-color: var(--color-sand-400);
-    color: var(--color-ink-900);
+    color: white;
     box-shadow: 0 4px 14px rgba(212, 163, 115, 0.4);
 
     &:hover {

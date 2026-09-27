@@ -21,7 +21,7 @@ export default function ServiceHero({ service, breadcrumb }: ServiceHeroProps) {
         {breadcrumb && (
           <nav
             aria-label="Breadcrumb"
-            className="mb-6 text-sm text-ink-500 animate-fade-up"
+            className="mb-6 text-sm text-white-500 animate-fade-up"
           >
             <ol className="flex flex-wrap items-center gap-2">
               <li>
@@ -41,10 +41,10 @@ export default function ServiceHero({ service, breadcrumb }: ServiceHeroProps) {
           </nav>
         )}
 
-        <h1 className="font-display animate-fade-up animate-delay-100 text-3xl md:text-5xl font-semibold leading-tight max-w-3xl text-ink-900 text-balance">
+        <h1 className="font-display animate-fade-up animate-delay-100 text-3xl md:text-5xl font-semibold leading-tight max-w-3xl text-white-900 text-balance">
           {service.h1}
         </h1>
-        <p className="animate-fade-up animate-delay-200 mt-5 text-lg text-ink-600 max-w-2xl leading-relaxed text-pretty">
+        <p className="animate-fade-up animate-delay-200 mt-5 text-lg text-white-600 max-w-2xl leading-relaxed text-pretty">
           {service.description}
         </p>
 
@@ -73,7 +73,7 @@ export default function ServiceHero({ service, breadcrumb }: ServiceHeroProps) {
             {service.features.map((f) => (
               <li
                 key={f}
-                className="flex items-start gap-2 text-sm text-ink-700"
+                className="flex items-start gap-2 text-sm text-white-700"
               >
                 <CheckCircle className="w-5 h-5 text-forest-700 shrink-0 mt-0.5" />
                 <span>{f}</span>

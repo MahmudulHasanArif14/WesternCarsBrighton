@@ -23,7 +23,7 @@ export default function MobileStickyCTA() {
         <div className="flex gap-2">
           <a
             href={SITE.phoneLink}
-            className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-ink-200 bg-white px-4 py-3 text-sm font-semibold text-ink-900"
+            className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-ink-200 bg-white px-4 py-3 text-sm font-semibold text-white-900"
             aria-label={`Call ${SITE.phone}`}
           >
             <Phone className="w-4 h-4 text-ocean-600" />
@@ -33,7 +33,7 @@ export default function MobileStickyCTA() {
             href={SITE.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-[2] inline-flex items-center justify-center gap-2 rounded-xl bg-sand-400 px-4 py-3 text-sm font-semibold text-ink-900 shadow-[0_4px_14px_rgba(212,163,115,0.4)]"
+            className="flex-[2] inline-flex items-center justify-center gap-2 rounded-xl bg-sand-400 px-4 py-3 text-sm font-semibold text-white-900 shadow-[0_4px_14px_rgba(212,163,115,0.4)]"
           >
             Book Online
             <ArrowRight className="w-4 h-4" />

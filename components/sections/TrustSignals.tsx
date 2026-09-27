@@ -15,7 +15,7 @@ export default function TrustSignals() {
           {SIGNALS.map(({ icon: Icon, label }) => (
             <li
               key={label}
-              className="flex items-center justify-center gap-2 text-sm font-medium text-ink-700"
+              className="flex items-center justify-center gap-2 text-sm font-medium text-white-700"
             >
               <Icon className="w-5 h-5 text-ocean-600 shrink-0" />
               <span>{label}</span>

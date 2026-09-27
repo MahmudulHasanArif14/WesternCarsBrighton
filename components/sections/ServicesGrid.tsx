@@ -37,13 +37,13 @@ export default function ServicesGrid() {
               className="card-hover group p-6 lg:p-8 animate-fade-up"
               style={{ animationDelay: `${i * 100}ms` }}
             >
-              <span className="w-14 h-14 bg-sand-100 rounded-xl flex items-center justify-center text-sand-700 group-hover:bg-sand-400 group-hover:text-ink-900 transition-colors duration-300">
+              <span className="w-14 h-14 bg-sand-100 rounded-xl flex items-center justify-center text-sand-700 group-hover:bg-sand-400 group-hover:text-white-900 transition-colors duration-300">
                 {ICONS[service.icon] ?? <Car className="w-8 h-8" />}
               </span>
-              <h3 className="font-display mt-5 text-xl font-semibold text-ink-900 group-hover:text-sand-700 transition-colors">
+              <h3 className="font-display mt-5 text-xl font-semibold text-white-900 group-hover:text-sand-700 transition-colors">
                 {service.shortTitle}
               </h3>
-              <p className="mt-3 text-ink-600 leading-relaxed">
+              <p className="mt-3 text-white-600 leading-relaxed">
                 {service.description}
               </p>
               <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-sand-700">

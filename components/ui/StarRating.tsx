@@ -16,7 +16,7 @@ export default function StarRating({
         <Star
           key={i}
           className={`w-4 h-4 ${
-            i < rating ? "fill-sand-500 text-sand-500" : "text-ink-300"
+            i < rating ? "fill-sand-500 text-sand-500" : "text-white-300"
           }`}
         />
       ))}

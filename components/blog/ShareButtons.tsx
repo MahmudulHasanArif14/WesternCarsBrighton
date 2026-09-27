@@ -24,7 +24,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
   };
 
   const btn =
-    "inline-flex items-center justify-center w-9 h-9 rounded-lg border border-ink-200 text-ink-600 hover:bg-sand-400 hover:border-sand-400 hover:text-ink-900 transition-colors";
+    "inline-flex items-center justify-center w-9 h-9 rounded-lg border border-ink-200 text-white-600 hover:bg-sand-400 hover:border-sand-400 hover:text-white-900 transition-colors";
 
   return (
     <div className="flex items-center gap-2">

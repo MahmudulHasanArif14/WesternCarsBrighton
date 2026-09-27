@@ -49,15 +49,15 @@ export default function BlogIndexPage() {
 
         <div className="relative container-x py-16 md:py-20">
           <div className="max-w-3xl">
-            <span className="animate-fade-up inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-ink-700 mb-6 shadow-sm">
+            <span className="animate-fade-up inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-white-700 mb-6 shadow-sm">
               <BookOpen className="w-4 h-4 text-sand-600" />
               Brighton taxi tips &amp; travel guides
             </span>
 
-            <h1 className="animate-fade-up animate-delay-100 font-display text-4xl md:text-5xl font-semibold leading-tight text-ink-900 text-balance">
+            <h1 className="animate-fade-up animate-delay-100 font-display text-4xl md:text-5xl font-semibold leading-tight text-white-900 text-balance">
               Guides from the road
             </h1>
-            <p className="animate-fade-up animate-delay-200 mt-5 text-lg text-ink-600 leading-relaxed max-w-2xl text-pretty">
+            <p className="animate-fade-up animate-delay-200 mt-5 text-lg text-white-600 leading-relaxed max-w-2xl text-pretty">
               Practical advice on Brighton &amp; Hove taxis, airport transfers,
               match-day travel, and getting around Sussex — written by drivers
               who do it every day.
@@ -93,7 +93,7 @@ export default function BlogIndexPage() {
                 </div>
 
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="flex items-center gap-4 text-xs text-ink-500">
+                  <div className="flex items-center gap-4 text-xs text-white-500">
                     <span className="inline-flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5" />
                       {new Date(featured.date).toLocaleDateString("en-GB", {
@@ -108,10 +108,10 @@ export default function BlogIndexPage() {
                     </span>
                   </div>
 
-                  <h2 className="font-display mt-4 text-2xl md:text-3xl font-semibold text-ink-900 group-hover:text-sand-700 transition-colors text-balance">
+                  <h2 className="font-display mt-4 text-2xl md:text-3xl font-semibold text-white-900 group-hover:text-sand-700 transition-colors text-balance">
                     {featured.title}
                   </h2>
-                  <p className="mt-4 text-ink-600 leading-relaxed text-pretty">
+                  <p className="mt-4 text-white-600 leading-relaxed text-pretty">
                     {featured.excerpt}
                   </p>
 
@@ -157,7 +157,7 @@ export default function BlogIndexPage() {
                   </div>
 
                   <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center gap-4 text-xs text-ink-500">
+                    <div className="flex items-center gap-4 text-xs text-white-500">
                       <span className="inline-flex items-center gap-1.5">
                         <Calendar className="w-3.5 h-3.5" />
                         {new Date(post.date).toLocaleDateString("en-GB", {
@@ -172,10 +172,10 @@ export default function BlogIndexPage() {
                       </span>
                     </div>
 
-                    <h3 className="font-display mt-3 text-lg font-semibold text-ink-900 group-hover:text-sand-700 transition-colors text-balance">
+                    <h3 className="font-display mt-3 text-lg font-semibold text-white-900 group-hover:text-sand-700 transition-colors text-balance">
                       {post.title}
                     </h3>
-                    <p className="mt-3 text-sm text-ink-600 leading-relaxed flex-1">
+                    <p className="mt-3 text-sm text-white-600 leading-relaxed flex-1">
                       {post.excerpt}
                     </p>
 

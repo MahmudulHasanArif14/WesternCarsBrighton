@@ -37,16 +37,16 @@ export default function ReviewsPage() {
 
         <div className="relative container-x py-16 md:py-24">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-ink-700 mb-6 shadow-sm">
+            <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-white-700 mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-forest-500 animate-pulse" />
               Verified passenger feedback
             </span>
 
-            <h1 className="font-display text-4xl md:text-5xl font-semibold leading-tight text-ink-900 text-balance">
+            <h1 className="font-display text-4xl md:text-5xl font-semibold leading-tight text-white-900 text-balance">
               Reviews from Brighton &amp; Hove passengers
             </h1>
 
-            <p className="mt-5 text-lg text-ink-600 text-pretty">
+            <p className="mt-5 text-lg text-white-600 text-pretty">
               Real feedback from real journeys — Gatwick runs, local hops,
               corporate accounts, and accessible taxis across the city.
             </p>
@@ -54,10 +54,10 @@ export default function ReviewsPage() {
             {/* Big rating display */}
             <div className="mt-10 inline-flex flex-col items-center bg-white rounded-3xl px-10 py-8 shadow-card border border-sand-100">
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-6xl font-semibold text-ink-900">
+                <span className="font-display text-6xl font-semibold text-white-900">
                   {RATING_SUMMARY.average.toFixed(1)}
                 </span>
-                <span className="text-2xl text-ink-400">/ 5</span>
+                <span className="text-2xl text-white-400">/ 5</span>
               </div>
               <div
                 className="mt-3 flex gap-1"
@@ -71,7 +71,7 @@ export default function ReviewsPage() {
                   />
                 ))}
               </div>
-              <p className="mt-3 text-sm text-ink-500">
+              <p className="mt-3 text-sm text-white-500">
                 Based on {RATING_SUMMARY.count} recent journeys
               </p>
             </div>
@@ -109,12 +109,12 @@ export default function ReviewsPage() {
                     />
                   ))}
                 </div>
-                <blockquote className="mt-4 text-ink-700 leading-relaxed">
+                <blockquote className="mt-4 text-white-700 leading-relaxed">
                   &ldquo;{t.text}&rdquo;
                 </blockquote>
                 <figcaption className="mt-5 pt-5 border-t border-ink-100">
-                  <span className="font-semibold text-ink-900">{t.name}</span>
-                  <span className="text-sm text-ink-500"> — {t.location}</span>
+                  <span className="font-semibold text-white-900">{t.name}</span>
+                  <span className="text-sm text-white-500"> — {t.location}</span>
                 </figcaption>
               </figure>
             ))}
@@ -125,10 +125,10 @@ export default function ReviewsPage() {
       {/* Leave a review CTA */}
       <section className="py-16 md:py-20 bg-sand-50/60">
         <div className="container-x max-w-3xl text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink-900 text-balance">
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-white-900 text-balance">
             Ridden with us recently?
           </h2>
-          <p className="mt-4 text-lg text-ink-600 text-pretty">
+          <p className="mt-4 text-lg text-white-600 text-pretty">
             We&apos;d love your feedback. Leave a review and help other Brighton
             &amp; Hove passengers choose with confidence.
           </p>

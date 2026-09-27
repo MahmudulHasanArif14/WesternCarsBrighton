@@ -86,7 +86,7 @@ export default function AboutPage() {
         <div className="relative container-x py-16 md:py-24 lg:py-28">
           <div className="max-w-3xl">
             <span className="animate-fade-up inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-ink-700 mb-6 shadow-sm">
-              <Award className="w-4 h-4 text-sand-600" />
+              <Award className="w-4 h-4 text-white-600" />
               Established 2007 · Brighton &amp; Hove
             </span>
 
@@ -185,7 +185,7 @@ export default function AboutPage() {
                 <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="font-display text-2xl font-semibold text-sand-700">
+                      <div className="font-display text-2xl font-semibold text-white-700">
                         18+
                       </div>
                       <div className="text-xs text-ink-500 mt-0.5">
@@ -275,7 +275,7 @@ export default function AboutPage() {
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 <span className="absolute left-[-9px] top-0 md:left-0 md:-top-[41px] w-4 h-4 rounded-full bg-sand-400 ring-4 ring-background shadow-[0_0_0_2px_rgba(212,163,115,0.3)]" />
-                <div className="font-display text-2xl font-semibold text-sand-700">
+                <div className="font-display text-2xl font-semibold text-white-700">
                   {m.year}
                 </div>
                 <p className="mt-1 text-sm text-ink-600 leading-relaxed">
@@ -288,7 +288,7 @@ export default function AboutPage() {
       </section>
 
       {/* COMMITMENT */}
-      <section className="py-16 md:py-24 bg-ink-900 text-sand-50 relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-ink-900 text-white-50 relative overflow-hidden">
         <div
           className="absolute inset-0 bg-grain opacity-30"
           aria-hidden="true"
@@ -299,11 +299,11 @@ export default function AboutPage() {
         />
 
         <div className="relative container-x max-w-4xl text-center">
-          <Heart className="w-10 h-10 text-sand-400 mx-auto" />
+          <Heart className="w-10 h-10 text-white-400 mx-auto" />
           <h2 className="font-display mt-6 text-3xl md:text-4xl font-semibold text-balance">
             Local first. Every time.
           </h2>
-          <p className="mt-5 text-lg text-sand-100/80 leading-relaxed text-pretty">
+          <p className="mt-5 text-lg text-white-100/80 leading-relaxed text-pretty">
             We&apos;re not a faceless national app. We&apos;re a Brighton
             business, run by people who live here, drive here, and know the
             shortcuts between the Lanes and the Amex on a match day. That local

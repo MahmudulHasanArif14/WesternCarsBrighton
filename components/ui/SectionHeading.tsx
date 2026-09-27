@@ -13,11 +13,11 @@ export default function SectionHeading({
     <div
       className={`max-w-3xl mb-12 ${align === "center" ? "mx-auto text-center" : ""}`}
     >
-      <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink-900 text-balance">
+      <h2 className="font-display text-3xl md:text-4xl font-semibold text-white-900 text-balance">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-lg text-ink-600 text-pretty">{subtitle}</p>
+        <p className="mt-4 text-lg text-white-600 text-pretty">{subtitle}</p>
       )}
     </div>
   );

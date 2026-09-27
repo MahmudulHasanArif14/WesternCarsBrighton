@@ -68,10 +68,10 @@ export default function WhyChooseUs() {
                 <span className="w-12 h-12 bg-ocean-50 rounded-xl flex items-center justify-center text-ocean-600">
                   <Icon className="w-6 h-6" />
                 </span>
-                <h3 className="font-display mt-4 text-lg font-semibold text-ink-900">
+                <h3 className="font-display mt-4 text-lg font-semibold text-white-900">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-ink-600 leading-relaxed text-sm">
+                <p className="mt-2 text-white-600 leading-relaxed text-sm">
                   {feature.description}
                 </p>
               </div>

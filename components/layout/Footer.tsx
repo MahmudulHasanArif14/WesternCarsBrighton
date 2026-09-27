@@ -8,11 +8,11 @@ export default async function Footer() {
   const year = await getCurrentYear();
 
   return (
-    <footer className="bg-ink-900 text-ink-300">
+    <footer className="bg-ink-900 text-white">
       <div className="container-x py-14 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <h2 className="font-display text-sand-50 text-xl font-semibold">
+            <h2 className="font-display text-white text-xl font-semibold">
               {SITE.name}
             </h2>
             <p className="mt-3 text-sm leading-relaxed">
@@ -23,20 +23,20 @@ export default async function Footer() {
             <div className="mt-5 space-y-3 text-sm">
               <a
                 href={SITE.phoneLink}
-                className="flex items-start gap-3 hover:text-sand-50 transition-colors"
+                className="flex items-start gap-3 hover:text-white-50 transition-colors"
               >
-                <Phone className="w-4 h-4 mt-0.5 text-sand-400 shrink-0" />
+                <Phone className="w-4 h-4 mt-0.5 text-white-400 shrink-0" />
                 <span>{SITE.phone}</span>
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="flex items-start gap-3 hover:text-sand-50 transition-colors"
+                className="flex items-start gap-3 hover:text-white-50 transition-colors"
               >
-                <Mail className="w-4 h-4 mt-0.5 text-sand-400 shrink-0" />
+                <Mail className="w-4 h-4 mt-0.5 text-white-400 shrink-0" />
                 <span>{SITE.email}</span>
               </a>
               <p className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 mt-0.5 text-sand-400 shrink-0" />
+                <MapPin className="w-4 h-4 mt-0.5 text-white-400 shrink-0" />
                 <span>
                   {SITE.address.street}
                   <br />
@@ -44,20 +44,20 @@ export default async function Footer() {
                 </span>
               </p>
               <p className="flex items-start gap-3">
-                <Clock className="w-4 h-4 mt-0.5 text-sand-400 shrink-0" />
+                <Clock className="w-4 h-4 mt-0.5 text-white-400 shrink-0" />
                 <span>Open 24 hours, 7 days a week</span>
               </p>
             </div>
           </div>
 
           <div>
-            <h3 className="text-sand-50 font-semibold mb-4">Our Services</h3>
+            <h3 className="text-white-50 font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2.5 text-sm">
               {SERVICES.map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/${s.slug}/`}
-                    className="hover:text-sand-50 transition-colors"
+                    className="hover:text-white-50 transition-colors"
                   >
                     {s.shortTitle}
                   </Link>
@@ -67,7 +67,7 @@ export default async function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sand-50 font-semibold mb-4">Company</h3>
+            <h3 className="text-white-50 font-semibold mb-4">Company</h3>
             <ul className="space-y-2.5 text-sm">
               {NAV_LINKS.filter((l) =>
                 ["/about-us/", "/reviews/", "/contact-us/"].includes(l.href),
@@ -75,7 +75,7 @@ export default async function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="hover:text-sand-50 transition-colors"
+                    className="hover:text-white-50 transition-colors"
                   >
                     {l.name}
                   </Link>
@@ -84,7 +84,7 @@ export default async function Footer() {
               <li>
                 <Link
                   href="/blog/"
-                  className="hover:text-sand-50 transition-colors"
+                  className="hover:text-white-50 transition-colors"
                 >
                   Blog
                 </Link>
@@ -92,7 +92,7 @@ export default async function Footer() {
               <li>
                 <Link
                   href="/terms-conditions/"
-                  className="hover:text-sand-50 transition-colors"
+                  className="hover:text-white-50 transition-colors"
                 >
                   Terms &amp; Conditions
                 </Link>
@@ -101,7 +101,7 @@ export default async function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sand-50 font-semibold mb-4">Areas We Serve</h3>
+            <h3 className="text-white-50 font-semibold mb-4">Areas We Serve</h3>
             <ul className="space-y-2.5 text-sm">
               <li>Brighton</li>
               <li>Hove</li>
@@ -114,7 +114,7 @@ export default async function Footer() {
               href={SITE.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-sm hover:text-sand-50 transition-colors"
+              className="mt-5 inline-flex items-center gap-2 text-sm hover:text-white-50 transition-colors"
             >
               <svg
                 className="w-5 h-5"
@@ -129,8 +129,8 @@ export default async function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-ink-800 flex flex-col md:flex-row justify-between gap-4 text-xs text-ink-400">
-          {/* was text-ink-500 — now #94A3B8 which has 7.1:1 contrast against ink-900 */}
+        <div className="mt-12 pt-8 border-t border-ink-800 flex flex-col md:flex-row justify-between gap-4 text-xs text-white-400">
+          {/* was text-white-500 — now #94A3B8 which has 7.1:1 contrast against ink-900 */}
           <p>
             © {year} {SITE.legalName}. Registered in England &amp; Wales,
             Company No. {SITE.companyNumber}.

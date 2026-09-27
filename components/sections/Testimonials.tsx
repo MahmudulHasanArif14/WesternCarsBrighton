@@ -34,12 +34,12 @@ export default function Testimonials() {
                   />
                 ))}
               </div>
-              <blockquote className="mt-4 text-ink-700 leading-relaxed">
+              <blockquote className="mt-4 text-white-700 leading-relaxed">
                 &ldquo;{t.text}&rdquo;
               </blockquote>
               <figcaption className="mt-5 pt-5 border-t border-ink-100">
-                <span className="font-semibold text-ink-900">{t.name}</span>
-                <span className="text-sm text-ink-500"> — {t.location}</span>
+                <span className="font-semibold text-white-900">{t.name}</span>
+                <span className="text-sm text-white-500"> — {t.location}</span>
               </figcaption>
             </figure>
           ))}

@@ -19,11 +19,11 @@ export default function Button({
   external,
 }: ButtonProps) {
   const variants = {
-    primary: "bg-sand-400 text-ink-900 hover:bg-sand-500 shadow-sm",
+    primary: "bg-sand-400 text-white hover:bg-sand-500 shadow-sm",
     ocean: "bg-ocean-600 text-white hover:bg-ocean-700 shadow-sm",
     ghost:
       "bg-white/10 text-white border border-white/20 hover:bg-white/20 backdrop-blur-sm",
-    outline: "border border-ink-200 text-ink-900 hover:bg-sand-50",
+    outline: "border border-ink-200 text-white hover:bg-sand-50",
   };
 
   const sizes = {

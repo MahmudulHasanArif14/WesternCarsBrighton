@@ -37,7 +37,7 @@ export default function FAQ({
                   className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-sand-50/60 transition-colors"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-semibold text-ink-900">
+                  <span className="font-semibold text-white-900">
                     {faq.question}
                   </span>
                   <ChevronDown
@@ -54,7 +54,7 @@ export default function FAQ({
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 text-ink-600 leading-relaxed">
+                    <p className="px-5 pb-5 text-white-600 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>

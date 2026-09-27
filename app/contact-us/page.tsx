@@ -81,15 +81,15 @@ export default function ContactPage() {
 
         <div className="relative container-x py-16 md:py-24">
           <div className="max-w-3xl">
-            <span className="animate-fade-up inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-ink-700 mb-6 shadow-sm">
+            <span className="animate-fade-up inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-white-700 mb-6 shadow-sm">
               <MessageCircle className="w-4 h-4 text-sand-600" />
               Get in touch · Available 24/7
             </span>
 
-            <h1 className="animate-fade-up animate-delay-100 font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-ink-900 text-balance">
+            <h1 className="animate-fade-up animate-delay-100 font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-white-900 text-balance">
               How can we help?
             </h1>
-            <p className="animate-fade-up animate-delay-200 mt-6 text-lg md:text-xl text-ink-600 leading-relaxed max-w-2xl text-pretty">
+            <p className="animate-fade-up animate-delay-200 mt-6 text-lg md:text-xl text-white-600 leading-relaxed max-w-2xl text-pretty">
               Book online 24/7 or contact the Western Cars team in Brighton.
               Whether it&apos;s an airport transfer, a corporate account, or a
               quick local journey — we&apos;re here.
@@ -129,10 +129,10 @@ export default function ContactPage() {
                 <span className="w-8 h-px bg-ocean-600" />
                 Reach us
               </span>
-              <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold text-ink-900 text-balance">
+              <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold text-white-900 text-balance">
                 Get in touch
               </h2>
-              <p className="mt-4 text-ink-600 leading-relaxed text-pretty">
+              <p className="mt-4 text-white-600 leading-relaxed text-pretty">
                 For the fastest service, call us directly — the phone line is
                 answered 24/7. For non-urgent enquiries, email or use the form
                 on this page.
@@ -143,17 +143,17 @@ export default function ContactPage() {
                   const Icon = item.icon;
                   const content = (
                     <div className="flex gap-4 items-start">
-                      <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-sand-100 text-sand-700 group-hover:bg-sand-400 group-hover:text-ink-900 transition-colors">
+                      <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-sand-100 text-sand-700 group-hover:bg-sand-400 group-hover:text-white-900 transition-colors">
                         <Icon className="w-5 h-5" />
                       </span>
                       <div className="min-w-0">
-                        <div className="text-xs font-semibold uppercase tracking-wider text-ink-500">
+                        <div className="text-xs font-semibold uppercase tracking-wider text-white-500">
                           {item.label}
                         </div>
-                        <div className="mt-1 font-semibold text-ink-900 break-words">
+                        <div className="mt-1 font-semibold text-white-900 break-words">
                           {item.value}
                         </div>
-                        <div className="mt-0.5 text-xs text-ink-500">
+                        <div className="mt-0.5 text-xs text-white-500">
                           {item.description}
                         </div>
                       </div>
@@ -193,10 +193,10 @@ export default function ContactPage() {
 
             {/* FORM */}
             <div className="card p-7 md:p-9 animate-fade-up animate-delay-200">
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-ink-900">
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-white-900">
                 Send an enquiry
               </h2>
-              <p className="mt-2 text-sm text-ink-600">
+              <p className="mt-2 text-sm text-white-600">
                 Fill in your details and we&apos;ll get back to you as soon as
                 possible.
               </p>
@@ -235,7 +235,7 @@ export default function ContactPage() {
                 </button>
               </form>
 
-              <p className="mt-4 text-xs text-ink-500 leading-relaxed">
+              <p className="mt-4 text-xs text-white-500 leading-relaxed">
                 For the fastest booking, use the{" "}
                 <a
                   href={SITE.bookingUrl}
@@ -261,10 +261,10 @@ export default function ContactPage() {
                 <span className="w-8 h-px bg-ocean-600" />
                 Find us
               </span>
-              <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold text-ink-900 text-balance">
+              <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold text-white-900 text-balance">
                 Based in Brighton, serving Sussex
               </h2>
-              <p className="mt-4 text-ink-600 leading-relaxed text-pretty">
+              <p className="mt-4 text-white-600 leading-relaxed text-pretty">
                 Our registered office is in central Brighton, a short walk from
                 Brighton station. We serve the whole of Brighton &amp; Hove,
                 plus East and West Sussex, and all major UK airports.
@@ -272,28 +272,28 @@ export default function ContactPage() {
 
               <dl className="mt-8 space-y-5">
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-ink-500">
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-white-500">
                     Registered office
                   </dt>
-                  <dd className="mt-1 text-ink-900 font-medium">
+                  <dd className="mt-1 text-white-900 font-medium">
                     {SITE.address.street}
                     <br />
                     {SITE.address.city}, {SITE.address.postcode}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-ink-500">
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-white-500">
                     Company registration
                   </dt>
-                  <dd className="mt-1 text-ink-900 font-medium">
+                  <dd className="mt-1 text-white-900 font-medium">
                     {SITE.legalName} · No. {SITE.companyNumber}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-ink-500">
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-white-500">
                     Service area
                   </dt>
-                  <dd className="mt-1 text-ink-900 font-medium">
+                  <dd className="mt-1 text-white-900 font-medium">
                     Brighton · Hove · Kemptown · Preston Park · Brighton Marina
                     · East &amp; West Sussex
                   </dd>
@@ -354,10 +354,10 @@ function Field({
   required,
 }: FieldProps) {
   const baseClass =
-    "rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-900 placeholder:text-ink-400 outline-none transition-all focus:border-sand-400 focus:ring-2 focus:ring-sand-400/30";
+    "rounded-xl border border-ink-200 bg-white px-4 py-3 text-white-900 placeholder:text-white-400 outline-none transition-all focus:border-sand-400 focus:ring-2 focus:ring-sand-400/30";
 
   return (
-    <label className="grid gap-2 text-sm font-semibold text-ink-800">
+    <label className="grid gap-2 text-sm font-semibold text-white-800">
       {label}
       {textarea ? (
         <textarea

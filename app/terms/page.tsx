@@ -334,21 +334,21 @@ export default function TermsPage() {
           <div className="max-w-3xl">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm font-medium text-ink-500 hover:text-ocean-700 transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm font-medium text-white-500 hover:text-ocean-700 transition-colors mb-6"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to home
             </Link>
 
-            <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-ink-700 mb-6 shadow-sm">
+            <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sand-200 rounded-full px-4 py-1.5 text-sm font-medium text-white-700 mb-6 shadow-sm">
               <FileText className="w-4 h-4 text-sand-600" />
               Legal
             </span>
 
-            <h1 className="font-display text-4xl md:text-5xl font-semibold leading-tight text-ink-900 text-balance">
+            <h1 className="font-display text-4xl md:text-5xl font-semibold leading-tight text-white-900 text-balance">
               Terms &amp; Conditions
             </h1>
-            <p className="mt-5 text-lg text-ink-600 leading-relaxed max-w-2xl text-pretty">
+            <p className="mt-5 text-lg text-white-600 leading-relaxed max-w-2xl text-pretty">
               Standard terms and conditions of sale for Western Cars Private
               Hire Limited, governing all bookings made by phone, email, or
               through{" "}
@@ -361,9 +361,12 @@ export default function TermsPage() {
               .
             </p>
 
-            <p className="mt-4 text-sm text-ink-500">
+            <p className="mt-4 text-sm text-white-500">
               Last updated:{" "}
-              <time dateTime="2026-01-01" className="font-medium text-ink-700">
+              <time
+                dateTime="2026-01-01"
+                className="font-medium text-white-700"
+              >
                 January 2026
               </time>
             </p>
@@ -375,20 +378,20 @@ export default function TermsPage() {
       <section className="bg-background border-b border-ink-100">
         <div className="container-x py-6">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:items-center text-sm">
-            <span className="font-semibold text-ink-900">
+            <span className="font-semibold text-white-900">
               Questions about these terms?
             </span>
             <div className="flex flex-wrap gap-4">
               <a
                 href={SITE.phoneLink}
-                className="inline-flex items-center gap-2 text-ink-700 hover:text-ocean-700 transition-colors"
+                className="inline-flex items-center gap-2 text-white-700 hover:text-ocean-700 transition-colors"
               >
                 <Phone className="w-4 h-4 text-ocean-600" />
                 {SITE.phone}
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="inline-flex items-center gap-2 text-ink-700 hover:text-ocean-700 transition-colors"
+                className="inline-flex items-center gap-2 text-white-700 hover:text-ocean-700 transition-colors"
               >
                 <Mail className="w-4 h-4 text-ocean-600" />
                 {SITE.email}
@@ -408,7 +411,7 @@ export default function TermsPage() {
                 aria-label="Table of contents"
                 className="sticky top-28 self-start"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 mb-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white-500 mb-4">
                   On this page
                 </p>
                 <ul className="space-y-2.5 text-sm">
@@ -416,10 +419,10 @@ export default function TermsPage() {
                     <li key={s.id}>
                       <a
                         href={`#${s.id}`}
-                        className="block text-ink-600 hover:text-sand-700 transition-colors leading-snug"
+                        className="block text-white-600 hover:text-sand-700 transition-colors leading-snug"
                       >
                         {s.number && (
-                          <span className="font-semibold text-ink-900 mr-1.5">
+                          <span className="font-semibold text-white-900 mr-1.5">
                             {s.number}.
                           </span>
                         )}
@@ -439,7 +442,7 @@ export default function TermsPage() {
                   id={section.id}
                   className={`scroll-mt-28 ${idx > 0 ? "mt-14 pt-14 border-t border-ink-100" : ""}`}
                 >
-                  <h2 className="font-display text-2xl md:text-3xl font-semibold text-ink-900 mb-6 text-balance">
+                  <h2 className="font-display text-2xl md:text-3xl font-semibold text-white-900 mb-6 text-balance">
                     {section.number && (
                       <span className="text-sand-600 mr-2">
                         {section.number}.
@@ -448,7 +451,7 @@ export default function TermsPage() {
                     {section.title}
                   </h2>
 
-                  <div className="space-y-5 text-ink-700 leading-relaxed">
+                  <div className="space-y-5 text-white-700 leading-relaxed">
                     {section.blocks.map((block, i) => {
                       if (block.type === "paragraph") {
                         return (
@@ -475,7 +478,7 @@ export default function TermsPage() {
                             {block.items.map((item) => (
                               <li
                                 key={item}
-                                className="flex items-start gap-2.5 text-ink-700"
+                                className="flex items-start gap-2.5 text-white-700"
                               >
                                 <span className="w-1.5 h-1.5 rounded-full bg-sand-500 mt-2.5 shrink-0" />
                                 <span>{item}</span>
@@ -493,17 +496,17 @@ export default function TermsPage() {
 
               {/* Contact block at end */}
               <div className="mt-14 pt-14 border-t border-ink-100">
-                <h2 className="font-display text-2xl font-semibold text-ink-900 mb-4">
+                <h2 className="font-display text-2xl font-semibold text-white-900 mb-4">
                   Contact
                 </h2>
-                <p className="text-ink-700 leading-relaxed">
+                <p className="text-white-700 leading-relaxed">
                   Western Cars Private Hire Limited
                   <br />
                   Mocatta House, Trafalgar Place
                   <br />
                   Brighton, BN1 4DU
                 </p>
-                <p className="mt-4 text-ink-700">
+                <p className="mt-4 text-white-700">
                   <a
                     href={SITE.phoneLink}
                     className="font-semibold text-ocean-700 hover:text-ocean-800"
@@ -518,7 +521,7 @@ export default function TermsPage() {
                     E: {SITE.email}
                   </a>
                 </p>
-                <p className="mt-6 text-xs text-ink-500">
+                <p className="mt-6 text-xs text-white-500">
                   Registered in England &amp; Wales, Company No.{" "}
                   {SITE.companyNumber}
                 </p>
