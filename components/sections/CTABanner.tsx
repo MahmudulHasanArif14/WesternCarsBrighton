@@ -38,9 +38,8 @@ export default function CTABanner() {
           <a
             href={SITE.phoneLink}
             className="btn bg-white/10 text-white border border-white/20 hover:bg-white/20 px-8 py-4 backdrop-blur-sm"
-            aria-label={`Call Western Cars Brighton on ${SITE.phone}`}
           >
-            <Phone className="w-5 h-5" />
+            <Phone className="w-5 h-5" aria-hidden="true" />
             Call {SITE.phone}
           </a>
         </div>

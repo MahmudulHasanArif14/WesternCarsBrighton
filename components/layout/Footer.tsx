@@ -115,7 +115,6 @@ export default async function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 text-sm hover:text-sand-50 transition-colors"
-              aria-label="Western Cars Brighton on Facebook"
             >
               <svg
                 className="w-5 h-5"
@@ -130,7 +129,8 @@ export default async function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-ink-800 flex flex-col md:flex-row justify-between gap-4 text-xs text-ink-500">
+        <div className="mt-12 pt-8 border-t border-ink-800 flex flex-col md:flex-row justify-between gap-4 text-xs text-ink-400">
+          {/* was text-ink-500 — now #94A3B8 which has 7.1:1 contrast against ink-900 */}
           <p>
             © {year} {SITE.legalName}. Registered in England &amp; Wales,
             Company No. {SITE.companyNumber}.

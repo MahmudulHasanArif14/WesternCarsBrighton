@@ -51,12 +51,8 @@ export default function Hero() {
                 Book Online Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a
-                href={SITE.phoneLink}
-                className="btn-ghost text-lg px-8 py-4"
-                aria-label={`Call Western Cars Brighton on ${SITE.phone}`}
-              >
-                <Phone className="w-5 h-5" />
+              <a href={SITE.phoneLink} className="btn-ghost text-lg px-8 py-4">
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 Call {SITE.phone}
               </a>
             </div>
@@ -93,11 +89,11 @@ export default function Hero() {
               />
               <div className="relative rounded-3xl bg-gradient-to-br from-sand-100 via-white to-ocean-50 p-8 ring-1 ring-sand-200/50 shadow-glow">
                 <Image
-                  src="/images/phoneImage.png"
+                  src="/images/PhoneImage.png"
                   alt="Western Cars Brighton booking app shown on a smartphone"
                   width={800}
                   height={1000}
-                  sizes="(min-width: 1024px) 40vw, 0vw"
+                  sizes="40vw"
                   className="w-full h-auto max-h-[600px] object-contain drop-shadow-2xl"
                   priority
                 />

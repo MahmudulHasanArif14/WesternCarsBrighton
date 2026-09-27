@@ -5,7 +5,7 @@ import { SITE } from "@/lib/constants";
 export default function NotFound() {
   return (
     <section className="relative overflow-hidden bg-sand-50 min-h-[70vh] flex items-center">
-      <div className="absolute inset-0 bg-gradient-to-br from-sand-100 via-background to-ocean-50/40" />
+      <div className="absolute inset-0 bg-linear-to-br from-sand-100 via-background to-ocean-50/40" />
       <div
         className="absolute inset-0 bg-grain opacity-60"
         aria-hidden="true"
@@ -37,8 +37,8 @@ export default function NotFound() {
               className="btn-ghost"
               aria-label={`Call Western Cars Brighton on ${SITE.phone}`}
             >
-              <Phone className="w-4 h-4" />
-              Call {SITE.phone}
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              <span aria-hidden="true">Call {SITE.phone}</span>
             </a>
           </div>
         </div>

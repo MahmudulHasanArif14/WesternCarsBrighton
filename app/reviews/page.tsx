@@ -59,7 +59,11 @@ export default function ReviewsPage() {
                 </span>
                 <span className="text-2xl text-ink-400">/ 5</span>
               </div>
-              <div className="mt-3 flex gap-1" aria-label="5 out of 5 stars">
+              <div
+                className="mt-3 flex gap-1"
+                aria-label="5 out of 5 stars"
+                role="img"
+              >
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}

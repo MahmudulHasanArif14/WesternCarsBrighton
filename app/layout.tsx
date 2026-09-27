@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import MobileStickyCTA from "@/components/layout/MobileStickyCTA";
 import { SITE } from "@/lib/constants";
 import { localBusinessSchema, organizationSchema } from "@/lib/schema";
+import AnnouncementBar from "@/components/layout/AnnouncementBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -116,6 +117,8 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+
+        <AnnouncementBar />
         <Header />
         <main id="main" className="pb-20 lg:pb-0">
           {children}

@@ -269,7 +269,6 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <a
                     href={SITE.phoneLink}
                     className="btn-ghost w-full mt-2 text-sm"
-                    aria-label={`Call ${SITE.phone}`}
                   >
                     <Phone className="w-4 h-4" />
                     {SITE.phone}

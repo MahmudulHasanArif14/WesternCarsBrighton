@@ -113,12 +113,8 @@ export default function AboutPage() {
                 Book Online
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a
-                href={SITE.phoneLink}
-                className="btn-ghost text-lg px-8 py-4"
-                aria-label={`Call Western Cars Brighton on ${SITE.phone}`}
-              >
-                <Phone className="w-5 h-5" />
+              <a href={SITE.phoneLink} className="btn-ghost text-lg px-8 py-4">
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 Call {SITE.phone}
               </a>
             </div>

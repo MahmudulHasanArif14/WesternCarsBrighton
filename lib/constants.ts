@@ -17,7 +17,9 @@ export const SITE = {
   founded: 2007,
   companyNumber: "09243357",
   bookingUrl: "https://westerncars.webbooker.icabbi.com",
-  social: { facebook: "https://www.facebook.com/westerncarscrawley" },
+  social: {
+    facebook: "https://www.facebook.com/westerncarsbrighton/?locale=en_GB",
+  },
 } as const;
 
 export const NAV_LINKS: NavLink[] = [
