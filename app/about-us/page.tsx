@@ -28,8 +28,7 @@ export const metadata: Metadata = {
   },
 };
 
-const CAR_IMAGE =
-  "https://westerncarsbrighton.co.uk/wp-content/uploads/2021/01/Chauffering-Hire.jpg";
+const CAR_IMAGE = "/images/Chauffering-Hire.avif";
 
 const VALUES = [
   {
