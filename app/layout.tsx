@@ -8,6 +8,7 @@ import { SITE } from "@/lib/constants";
 import { localBusinessSchema, organizationSchema } from "@/lib/schema";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import { Analytics } from "@vercel/analytics/next";
+import CookieConsent from "@/components/layout/CookieConsent";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -130,6 +131,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <MobileStickyCTA />
+        <CookieConsent />
         <Analytics />
       </body>
     </html>
