@@ -1,284 +1,362 @@
-"use client";
-
 import Image from "next/image";
+import { Caveat } from "next/font/google";
 import {
   MapPin,
-  Navigation,
+  Menu,
+  Search,
+  ChevronDown,
+  ArrowRight,
   Plane,
-  ArrowUpRight,
-  Star,
-  Clock,
-  CheckCircle2,
+  Home,
+  ClipboardList,
+  User,
+  Navigation,
 } from "lucide-react";
 
+const script = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  display: "swap",
+});
+
+const coverageRows = [
+  ["East Grinstead", "Crawley", "Horsham", "Haywards Heath"],
+  ["Lewes", "Worthing", "Brighton", "Horley", "Gatwick", "Heathrow"],
+];
+
+/**
+ * Right-hand hero composition.
+ * The parent (Hero) decides its size: full-bleed to the viewport's right edge
+ * on lg+, and a fixed-height block below the copy on mobile/tablet.
+ */
 export default function HeroVisual() {
   return (
-    <div className="relative mx-auto h-full min-h-[540px] w-full max-w-[680px]">
+    <div className="relative h-full w-full">
       {/* =====================================================
-          MAIN BACKGROUND IMAGE
+          BACKGROUND PHOTO (car + terminal + sky)
+          Fades into the white page on the left (desktop) or the
+          top (mobile) so it blends like the reference.
       ====================================================== */}
-
-      <div className="absolute right-0 top-8 h-[470px] w-[88%] overflow-hidden rounded-[36px] bg-slate-200 shadow-[0_30px_80px_rgba(15,23,42,0.18)]">
+      <div className="absolute inset-0 z-0">
         <Image
           src="/images/brighton-airport.jpg"
-          alt="Western Cars private hire vehicle"
+          alt="Black Western Cars private hire saloon outside the airport terminal"
           fill
           priority
-          className="object-cover"
+          sizes="(min-width: 1024px) 58vw, 100vw"
+          className="
+            object-cover object-[72%_60%] 
+            [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,#000_16%)]
+            [mask-image:linear-gradient(to_bottom,transparent_0%,#000_16%)]
+            lg:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.55)_18%,#000_40%)]
+            lg:[mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.55)_18%,#000_40%)]
+          "
         />
 
-        {/* Image overlay */}
-
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07152d]/65 via-transparent to-transparent" />
-
-        {/* Location label */}
-
-        <div className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full border border-white/30 bg-white/90 px-4 py-2 shadow-lg backdrop-blur">
-          <MapPin className="h-4 w-4 text-blue-600" />
-
-          <span className="text-sm font-semibold text-slate-800">
-            Brighton & Hove
-          </span>
-        </div>
+        {/* soft sky wash + top fade into the header */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-white/60 via-transparent to-transparent lg:from-white/40" />
       </div>
 
       {/* =====================================================
           PHONE MOCKUP
       ====================================================== */}
+      <div
+        className="
+          absolute z-30
+          left-[4%] top-[12%]
+          aspect-[9/19]
+          w-[clamp(148px,34%,250px)]
+          sm:left-[8%] sm:w-[clamp(160px,26%,250px)]
+          lg:left-[12%] lg:top-[11%] lg:w-[clamp(170px,22%,250px)]
+          overflow-hidden
+          rounded-[2.1rem]
+          border-[7px] border-[#0b1220]
+          bg-white
+          shadow-[0_30px_60px_-10px_rgba(15,23,42,0.35),0_0_0_1.5px_rgba(148,163,184,0.7)]
+          animate-float
+        "
+      >
+        {/* notch */}
+        <div className="absolute left-1/2 top-0 z-40 h-[18px] w-[38%] -translate-x-1/2 rounded-b-2xl bg-[#0b1220]" />
 
-      <div className="absolute left-0 top-20 z-20 h-[460px] w-[220px] overflow-hidden rounded-[34px] border-[7px] border-slate-900 bg-white shadow-[0_25px_60px_rgba(15,23,42,0.3)] sm:h-[490px] sm:w-[235px]">
-        {/* Phone top */}
+        {/* app header */}
 
-        <div className="absolute left-1/2 top-0 z-30 h-6 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-900" />
+        <div className="relative z-10 flex h-[13%] items-end justify-between bg-white px-3 pb-2">
+          <Menu className="h-3.5 w-3.5 text-slate-700" aria-hidden="true" />
 
-        {/* App header */}
-
-        <div className="relative flex h-16 items-center justify-between border-b border-slate-100 bg-white px-4 pt-3">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
-              <Navigation className="h-4 w-4 text-white" />
+          <div className="flex items-center gap-0.1">
+            <div className="relative h-6 w-6 shrink-0">
+              <Image
+                src="/images/logo.png"
+                alt="Western Cars logo"
+                fill
+                priority
+                sizes="24px"
+                className="object-contain"
+              />
             </div>
-
-            <span className="text-sm font-bold text-slate-800">
+            <span className="text-[10px] font-semibold text-slate-800">
               Western Cars
             </span>
           </div>
 
-          <div className="h-2 w-2 rounded-full bg-emerald-500" />
+          <Search className="h-3.5 w-3.5 text-blue-500" aria-hidden="true" />
         </div>
 
-        {/* Map */}
+        {/* map */}
+        <div className="absolute inset-x-0 bottom-[22%] top-[13%] overflow-hidden">
+          <Image
+            src="/images/map.png"
+            alt="Map showing the booking route from Gatwick to Brighton"
+            fill
+            priority
+            sizes="450px"
+            className="object-cover object-center"
+          />
 
-        <div className="relative h-[240px] overflow-hidden bg-[#e8f0e5]">
-          <Image src="/images/map.jpg" alt="" fill className="object-cover" />
-
-          {/* Route */}
-
+          {/* Route overlay
           <svg
-            className="absolute inset-0 h-full w-full"
-            viewBox="0 0 220 240"
-            fill="none"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute inset-0 h-full w-full"
+            aria-hidden="true"
           >
             <path
-              d="M40 190 C70 160 80 145 105 125 C125 108 140 94 168 62"
+              d="M21 90 C22 72 31 61 42 54 C53 47 61 38 70 25 C73 21 74 17 74 13"
+              fill="none"
               stroke="#2563EB"
-              strokeWidth="5"
+              strokeWidth="1.4"
               strokeLinecap="round"
+              vectorEffect="non-scaling-stroke"
             />
+          </svg> */}
 
-            <circle
-              cx="40"
-              cy="190"
-              r="8"
-              fill="white"
-              stroke="#2563EB"
-              strokeWidth="4"
-            />
+          {/* Gatwick pin */}
+          {/* <div
+            className="absolute right-[20%] top-[7%] flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 shadow-md"
+            aria-hidden="true"
+          >
+            <span className="h-2 w-2 rounded-full bg-white" />
+          </div> */}
 
-            <circle
-              cx="168"
-              cy="62"
-              r="8"
-              fill="#2563EB"
-              stroke="white"
-              strokeWidth="4"
-            />
-          </svg>
-
-          {/* Floating destination */}
-
-          <div className="absolute left-3 top-3 right-3 rounded-xl border border-white/70 bg-white/95 p-3 shadow-lg backdrop-blur">
-            <div className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-blue-600" />
-
-              <span className="text-[11px] font-medium text-slate-400">
-                PICKUP
-              </span>
-            </div>
-
-            <p className="mt-1 text-xs font-semibold text-slate-800">
-              Gatwick Airport
-            </p>
-
-            <div className="my-2 h-px bg-slate-100" />
-
-            <div className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-
-              <span className="text-[11px] font-medium text-slate-400">
-                DESTINATION
-              </span>
-            </div>
-
-            <p className="mt-1 text-xs font-semibold text-slate-800">
-              Brighton & Hove
-            </p>
-          </div>
+          {/* Brighton pin */}
+          {/* <div
+            className="absolute bottom-[7%] left-[18%] flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 shadow-md"
+            aria-hidden="true"
+          >
+            <span className="h-2 w-2 rounded-full bg-white" />
+          </div> */}
         </div>
 
-        {/* Quote section */}
-
-        <div className="bg-white p-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-[10px] uppercase tracking-wide text-slate-400">
-                Estimated Fare
-              </p>
-
-              <p className="text-xl font-bold text-slate-900">Get a Quote</p>
-            </div>
-
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
-              <ArrowUpRight className="h-5 w-5" />
-            </div>
+        {/* booking sheet */}
+        <div className="absolute inset-x-0 bottom-[10%] z-10 mx-2 rounded-xl bg-white p-2 shadow-[0_-6px_18px_rgba(15,23,42,0.12)]">
+          <div className="flex items-center gap-1.5 border-b border-slate-100 pb-1.5">
+            <MapPin className="h-2.5 w-2.5 text-blue-600" aria-hidden="true" />
+            <span className="flex-1 text-[8px] font-medium text-slate-700">
+              Gatwick Airport
+            </span>
+            <ChevronDown
+              className="h-2.5 w-2.5 text-slate-400"
+              aria-hidden="true"
+            />
           </div>
-
-          <button className="mt-3 w-full rounded-xl bg-blue-600 py-3 text-xs font-bold text-white shadow-lg shadow-blue-600/20">
-            Book Your Journey
+          <div className="flex items-center gap-1.5 py-1.5">
+            <MapPin className="h-2.5 w-2.5 text-blue-600" aria-hidden="true" />
+            <span className="flex-1 text-[8px] font-medium text-slate-700">
+              Brighton &amp; Hove
+            </span>
+            <ChevronDown
+              className="h-2.5 w-2.5 text-slate-400"
+              aria-hidden="true"
+            />
+          </div>
+          <button
+            type="button"
+            tabIndex={-1}
+            className="w-full rounded-md bg-blue-600 py-1.5 text-[8px] font-semibold text-white"
+          >
+            Get Quote
           </button>
         </div>
 
-        {/* Bottom nav */}
-
-        <div className="absolute bottom-0 left-0 right-0 flex h-12 items-center justify-around border-t border-slate-100 bg-white text-[9px] text-slate-400">
-          <div className="font-semibold text-blue-600">Home</div>
-          <div>Bookings</div>
-          <div>Account</div>
+        {/* tab bar */}
+        <div className="absolute inset-x-0 bottom-0 z-10 flex h-[10%] items-center justify-around border-t border-slate-100 bg-white">
+          {[
+            { Icon: Home, label: "Home", active: true },
+            { Icon: ClipboardList, label: "Bookings", active: false },
+            { Icon: User, label: "Account", active: false },
+          ].map(({ Icon, label, active }) => (
+            <div key={label} className="flex flex-col items-center gap-0.5">
+              <Icon
+                className={`h-3 w-3 ${active ? "text-blue-600" : "text-slate-400"}`}
+                aria-hidden="true"
+              />
+              <span
+                className={`text-[6px] ${active ? "font-semibold text-blue-600" : "text-slate-400"}`}
+              >
+                {label}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* =====================================================
-          FLOATING IMAGE CARD 1
+          BRIGHTON PIER PHOTO (tilted polaroid)
       ====================================================== */}
-
-      <div className="absolute right-4 top-0 z-30 h-[145px] w-[190px] rotate-2 overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_15px_40px_rgba(15,23,42,0.2)] sm:right-8">
+      <div
+        className="
+          absolute z-20
+          left-[42%] top-[6%]
+          h-[104px] w-[132px]
+          -rotate-[4deg]
+          overflow-hidden
+          rounded-2xl
+          border-[5px] border-white
+          shadow-[0_18px_36px_-8px_rgba(15,23,42,0.3)]
+          sm:left-[40%] sm:h-[130px] sm:w-[166px]
+          lg:left-[34%] lg:top-[7%] lg:h-[clamp(130px,26%,200px)] lg:w-[clamp(160px,19.5%,230px)]
+        "
+      >
         <Image
           src="/images/brighton-pier.jpg"
-          alt="Brighton Pier"
+          alt="Brighton Pier at sunset"
           fill
-          className="object-cover"
+          priority
+          sizes="230px"
+          className="object-cover "
         />
-
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8">
-          <p className="text-xs font-bold text-white">Brighton & Hove</p>
-        </div>
       </div>
 
       {/* =====================================================
-          FLOATING IMAGE CARD 2
+          GATWICK PHOTO (tilted, tucked behind the pier photo)
       ====================================================== */}
-
-      <div className="absolute right-0 top-[165px] z-30 h-[125px] w-[165px] -rotate-3 overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_15px_40px_rgba(15,23,42,0.18)]">
+      <div
+        className="
+          absolute z-10
+          hidden
+          sm:block
+          sm:left-[62%] sm:top-[17%]
+          sm:h-[104px] sm:w-[128px]
+          rotate-[5deg]
+          overflow-hidden
+          rounded-2xl
+          border-[5px] border-white
+          shadow-[0_18px_36px_-8px_rgba(15,23,42,0.28)]
+          lg:left-[54%] lg:top-[19%] lg:h-[clamp(110px,20%,160px)] lg:w-[clamp(140px,15%,180px)]
+        "
+      >
         <Image
           src="/images/gatwick-airport.jpg"
-          alt="Gatwick Airport"
+          alt="Aircraft on the apron at Gatwick Airport"
           fill
+          priority
+          sizes="180px"
           className="object-cover"
         />
-
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8">
-          <div className="flex items-center gap-1.5">
-            <Plane className="h-3.5 w-3.5 text-white" />
-
-            <span className="text-[11px] font-bold text-white">
-              Airport Transfers
-            </span>
-          </div>
-        </div>
       </div>
 
       {/* =====================================================
-          RATING CARD
+          AIRPLANE + HANDWRITTEN CALLOUT
       ====================================================== */}
+      <Plane
+        aria-hidden="true"
+        className="
+          absolute right-[20%] top-[5%] z-30 hidden
+          h-12 w-12 -rotate-[8deg]
+          fill-slate-800 text-slate-800
+          md:block lg:h-14 lg:w-14
+        "
+        strokeWidth={1.25}
+      />
 
-      <div className="absolute left-[165px] top-[390px] z-40 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-[0_15px_35px_rgba(15,23,42,0.16)] backdrop-blur">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50">
-            <Star className="h-5 w-5 fill-blue-600 text-blue-600" />
-          </div>
+      <div
+        className="absolute right-[2%] top-[15%] z-30 hidden -rotate-[8deg] md:block"
+        aria-hidden="true"
+      >
+        <p
+          className={`${script.className} text-right text-[26px] font-semibold leading-[1.05] text-blue-700 xl:text-[32px]`}
+        >
+          Airport Transfers
+          <br />
+          to Local Journeys
+        </p>
 
-          <div>
-            <div className="flex items-center gap-1">
-              <span className="text-lg font-bold text-slate-900">5.0</span>
-
-              <div className="flex">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="h-3 w-3 fill-blue-600 text-blue-600"
-                  />
-                ))}
-              </div>
-            </div>
-
-            <p className="text-[11px] text-slate-400">
-              Passenger rated service
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* =====================================================
-          24/7 CARD
-      ====================================================== */}
-
-      <div className="absolute bottom-5 left-4 z-40 flex items-center gap-3 rounded-2xl border border-white bg-white/95 px-4 py-3 shadow-[0_15px_35px_rgba(15,23,42,0.15)] backdrop-blur">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50">
-          <Clock className="h-5 w-5 text-emerald-600" />
-        </div>
-
-        <div>
-          <p className="text-sm font-bold text-slate-800">Available 24/7</p>
-
-          <div className="flex items-center gap-1 text-[11px] text-emerald-600">
-            <CheckCircle2 className="h-3 w-3" />
-            Ready to travel
-          </div>
-        </div>
+        <svg
+          width="190"
+          height="30"
+          viewBox="0 0 190 30"
+          className="ml-auto mt-1 text-blue-700"
+        >
+          <path
+            d="M6 24 C 50 6, 120 6, 182 12"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
       </div>
 
       {/* =====================================================
           COVERAGE CARD
       ====================================================== */}
-
-      <div className="absolute -bottom-4 right-0 z-40 w-[390px] max-w-[92%] rounded-2xl border border-white bg-white/95 p-4 shadow-[0_20px_50px_rgba(15,23,42,0.18)] backdrop-blur">
+      <div
+        className="
+          absolute z-40
+          inset-x-4 bottom-5
+          rounded-2xl
+          bg-white/95
+          p-4
+          shadow-[0_24px_50px_-12px_rgba(15,23,42,0.25)]
+          backdrop-blur
+          sm:inset-x-auto sm:right-[6%] sm:w-[400px]
+          lg:bottom-[9%] lg:right-[8%] lg:w-[clamp(340px,54%,470px)]
+        "
+      >
         <div className="flex items-start gap-3">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-600 shadow-lg shadow-blue-600/20">
-            <MapPin className="h-5 w-5 text-white" />
+          <div className="relative flex shrink-0 flex-col items-center pt-0.5">
+            <MapPin
+              className="h-9 w-9 fill-blue-600 text-white"
+              strokeWidth={1.5}
+              aria-hidden="true"
+            />
+            <span className="mt-0.5 h-1.5 w-5 rounded-full bg-blue-100" />
           </div>
 
-          <div className="min-w-0">
-            <p className="text-sm font-bold text-slate-900">
-              We Cover Brighton & West Sussex
-            </p>
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center justify-between gap-2">
+              <h2 className="text-sm font-bold text-[#0b2a6f] sm:text-[15px]">
+                We Cover Whole of West Sussex
+              </h2>
+              <ArrowRight
+                className="h-4 w-4 shrink-0 text-blue-600"
+                aria-hidden="true"
+              />
+            </div>
 
-            <p className="mt-1 text-[11px] leading-5 text-slate-500">
-              Brighton · Hove · Crawley · Horsham · East Grinstead · Haywards
-              Heath · Worthing · Lewes · Gatwick · Heathrow
-            </p>
+            <div className="mt-2 space-y-1">
+              {coverageRows.map((row, i) => (
+                <p
+                  key={i}
+                  className="flex flex-wrap items-center gap-x-2 text-[11px] leading-5 text-slate-600 sm:text-xs"
+                >
+                  {row.map((place, j) => (
+                    <span key={place} className="flex items-center gap-2">
+                      {j > 0 && (
+                        <span
+                          aria-hidden="true"
+                          className="h-[3px] w-[3px] rounded-full bg-slate-400"
+                        />
+                      )}
+                      {place}
+                    </span>
+                  ))}
+                </p>
+              ))}
+            </div>
           </div>
-
-          <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-blue-600" />
         </div>
       </div>
     </div>

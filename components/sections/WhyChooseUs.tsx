@@ -1,82 +1,153 @@
+import Image from "next/image";
 import {
-  Clock,
-  Shield,
-  PoundSterling,
-  Award,
-  MapPin,
-  Smartphone,
+  ShieldCheck,
+  Clock3,
+  Star,
+  Headphones,
+  Heart,
+  Leaf,
 } from "lucide-react";
-import SectionHeading from "@/components/ui/SectionHeading";
 
-const FEATURES = [
+const WHY_CHOOSE_US = [
   {
-    icon: Clock,
-    title: "24/7 Availability",
-    description:
-      "Day or night, early flights or late nights out — we operate around the clock, every day of the year.",
+    icon: ShieldCheck,
+    title: "Safe & Reliable",
+    description: "Fully licensed and vetted drivers.",
   },
   {
-    icon: PoundSterling,
-    title: "Fixed Prices",
-    description:
-      "Airport transfers and pre-booked journeys are fixed-price. No meter surprises, no hidden charges.",
+    icon: Clock3,
+    title: "On-Time",
+    description: "We value your time and punctuality.",
   },
   {
-    icon: Shield,
-    title: "Licensed & Vetted",
-    description:
-      "Fully licensed by Brighton & Hove City Council. All drivers are DBS-checked and professionally trained.",
+    icon: Star,
+    title: "Comfortable Rides",
+    description: "Clean, modern vehicles for your comfort.",
   },
   {
-    icon: Award,
-    title: "Since 2007",
-    description:
-      "Family-run and locally trusted for over 15 years. Part of the Western Cars private hire network.",
+    icon: Headphones,
+    title: "24/7 Support",
+    description: "Always here when you need us.",
   },
   {
-    icon: MapPin,
-    title: "Local Knowledge",
-    description:
-      "Born-and-bred Brighton drivers who know the shortcuts, the events, and the best pickup spots.",
+    icon: Heart,
+    title: "Customer Focus",
+    description: "Your satisfaction is our priority.",
   },
   {
-    icon: Smartphone,
-    title: "Easy Booking",
-    description:
-      "Book online, by phone, email, or through our iOS and Android app. Confirmation in seconds.",
+    icon: Leaf,
+    title: "Eco Friendly",
+    description: "Lower emissions, greener future.",
   },
 ];
 
-export default function WhyChooseUs() {
+export default function WhyChooseWesternCars() {
   return (
-    <section className="py-16 md:py-24 bg-sand-50/60">
-      <div className="container-x">
-        <SectionHeading
-          title="Why Choose Western Cars Brighton?"
-          subtitle="A local private hire service built on reliability, transparency, and genuine Brighton knowledge."
+    <section className="relative w-full overflow-hidden bg-[#031B43]">
+      {/* =========================================================
+          BACKGROUND IMAGE
+          Original image is 16:9
+      ========================================================== */}
+
+      <div className="relative aspect-[16/9] min-h-[650px] w-full lg:min-h-0">
+        <Image
+          src="/images/brighton-seafront.png"
+          alt="Brighton seafront"
+          fill
+          priority
+          sizes="100vw"
+          className="object-contain object-center"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {FEATURES.map((feature, i) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className="card p-6 lg:p-7 animate-fade-up"
-                style={{ animationDelay: `${i * 100}ms` }}
-              >
-                <span className="w-12 h-12 bg-ocean-50 rounded-xl flex items-center justify-center text-ocean-600">
-                  <Icon className="w-6 h-6" />
-                </span>
-                <h3 className="font-display mt-4 text-lg font-semibold text-white-900">
-                  {feature.title}
-                </h3>
-                <p className="mt-2 text-white-600 leading-relaxed text-sm">
-                  {feature.description}
-                </p>
-              </div>
-            );
-          })}
+        {/* =========================================================
+            DARK OVERLAY
+        ========================================================== */}
+
+        {/* Dark area for text on LEFT */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#031B43]/95 via-[#06295C]/70 to-transparent" />
+
+        {/* Bottom dark gradient */}
+        <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#031B43]/90 via-[#031B43]/40 to-transparent" />
+
+        {/* Slight overall blue tint */}
+        <div className="absolute inset-0 bg-[#031B43]/10" />
+
+        {/* Blue glow on left */}
+        <div className="pointer-events-none absolute -left-40 top-10 h-[450px] w-[450px] rounded-full bg-blue-500/20 blur-3xl" />
+
+        {/* =========================================================
+            CONTENT
+        ========================================================== */}
+
+        <div className="container-x absolute inset-0 z-10 flex flex-col justify-center py-12 md:py-16 lg:py-20">
+          {/* =======================================================
+              HEADER
+          ======================================================== */}
+
+          <div className="max-w-xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-400">
+              Why choose us
+            </p>
+
+            <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-[52px]">
+              Why Choose{" "}
+              <span className="text-cyan-400">Western Cars</span>
+              <br />
+              Brighton?
+            </h2>
+
+            <p className="mt-5 max-w-lg text-base leading-7 text-white/75 md:text-lg">
+              A local, trusted taxi service with a commitment to safety,
+              comfort and customer satisfaction.
+            </p>
+          </div>
+
+          {/* =======================================================
+              FEATURES
+          ======================================================== */}
+
+          <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 md:mt-12 md:grid-cols-3 lg:mt-14 lg:grid-cols-6 lg:gap-x-7 lg:gap-y-0">
+            {WHY_CHOOSE_US.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div key={item.title} className="group">
+                  {/* Icon */}
+                  <div
+                    className="
+                      flex h-12 w-12
+                      items-center justify-center
+                      rounded-full
+                      bg-blue-600/80
+                      text-cyan-300
+                      shadow-[0_8px_30px_rgba(0,105,255,0.25)]
+                      backdrop-blur-sm
+                      transition-all duration-300
+                      group-hover:scale-110
+                      group-hover:bg-blue-500
+                      group-hover:text-white
+                      md:h-14 md:w-14
+                    "
+                  >
+                    <Icon
+                      className="h-6 w-6 md:h-7 md:w-7"
+                      strokeWidth={1.8}
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="mt-4 text-sm font-semibold text-white md:mt-5 md:text-[17px]">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="mt-2 max-w-[180px] text-xs leading-5 text-white/65 md:text-sm">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

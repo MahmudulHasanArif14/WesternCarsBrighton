@@ -13,7 +13,7 @@ export const SITE = {
     postcode: "BN1 4DU",
     country: "GB",
   },
-  geo: { lat: 50.8293295, lng: -0.1398333 },
+  geo: { lat: 50.829443861529796, lng: -0.1398401980336637 },
   founded: 2007,
   companyNumber: "09243357",
   bookingUrl: "https://westerncars.webbooker.icabbi.com",
