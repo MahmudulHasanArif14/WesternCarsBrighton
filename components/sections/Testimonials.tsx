@@ -467,7 +467,7 @@ function ReviewCard({ review }: { review: Review }) {
             src={review.image}
             alt={review.name}
             fill
-            sizes="36px"
+            sizes="(min-width: 1280px) 1280px, 100vw"
             className="object-cover"
             unoptimized
           />

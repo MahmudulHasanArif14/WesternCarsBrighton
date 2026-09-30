@@ -60,7 +60,7 @@ export default function MobileHeroVisual() {
                 src="/images/brighton-pier.jpg"
                 alt="Brighton Pier at sunset"
                 fill
-                sizes="200px"
+                sizes="(min-width: 1280px) 1280px, 100vw"
                 className="object-cover"
               />
             </div>
@@ -70,7 +70,7 @@ export default function MobileHeroVisual() {
                 src="/images/gatwick-airport.jpg"
                 alt="Aircraft on the apron at Gatwick Airport"
                 fill
-                sizes="180px"
+                sizes="(min-width: 1280px) 1280px, 100vw"
                 className="object-cover"
               />
             </div>
@@ -91,7 +91,7 @@ export default function MobileHeroVisual() {
                     src="/images/logo.png"
                     alt="Western Cars logo"
                     fill
-                    sizes="24px"
+                    sizes="(min-width: 1280px) 1280px, 100vw"
                     className="object-contain"
                   />
                 </div>
@@ -112,7 +112,7 @@ export default function MobileHeroVisual() {
                 src="/images/map.png"
                 alt="Map showing the booking route from Gatwick to Brighton"
                 fill
-                sizes="450px"
+                sizes="(min-width: 1280px) 1280px, 100vw"
                 className="object-cover object-center"
               />
             </div>
