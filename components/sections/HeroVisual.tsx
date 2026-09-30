@@ -327,9 +327,9 @@ export default function HeroVisual() {
 
           <div className="min-w-0 flex-1">
             <div className="flex items-center justify-between gap-2">
-              <h2 className="text-sm font-bold text-[#0b2a6f] sm:text-[15px]">
+              <p className="text-sm font-bold text-[#0b2a6f] sm:text-[15px]">
                 We Cover Whole of West Sussex
-              </h2>
+              </p>
               <ArrowRight
                 className="h-4 w-4 shrink-0 text-blue-600"
                 aria-hidden="true"
