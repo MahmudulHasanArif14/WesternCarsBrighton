@@ -71,7 +71,7 @@ export default function ServicesGrid() {
           >
             {/* Background image */}
             <Image
-              src="/images/gatwickdrop.jfif"
+              src="/images/gatwickdrop.webp"
               alt="Airport transfer from Brighton to Gatwick"
               sizes="(max-width: 1024px) 100vw, 50vw"
               fill
