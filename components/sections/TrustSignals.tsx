@@ -9,7 +9,7 @@ const SIGNALS = [
 
 export default function TrustSignals() {
   return (
-    <section className="bg-background border-b border-sand-100">
+    <section className="bg-background border-b border-sand-100 hidden lg:block">
       <div className="container-x py-6">
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {SIGNALS.map(({ icon: Icon, label }) => (

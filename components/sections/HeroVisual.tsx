@@ -313,6 +313,7 @@ export default function HeroVisual() {
           backdrop-blur
           sm:inset-x-auto sm:right-[6%] sm:w-[400px]
           lg:bottom-[9%] lg:right-[8%] lg:w-[clamp(340px,54%,470px)]
+         
         "
       >
         <div className="flex items-start gap-3">

@@ -54,7 +54,7 @@ export default function WhyChooseWesternCars() {
           alt="Brighton seafront with Western Cars vehicle"
           fill
           priority
-          sizes="100vw"
+          sizes="(min-width: 1280px) 1280px, 100vw"
           className="object-cover object-center"
         />
 
