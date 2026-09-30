@@ -7,7 +7,7 @@ export const localBusinessSchema = {
   "@id": `${SITE.url}/#business`,
   name: SITE.name,
   legalName: SITE.legalName,
-  image: `${SITE.url}/images/og-image.jpg`,
+  image: `${SITE.url}/images/brighton-pier.jpg`,
   url: SITE.url,
   telephone: "+441273220220",
   email: SITE.email,

@@ -4,7 +4,6 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CTABanner from "@/components/sections/CTABanner";
 import { TESTIMONIALS } from "@/lib/testimonials";
 import { SITE } from "@/lib/constants";
-import { localBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Reviews | Western Cars Brighton Taxi Service",

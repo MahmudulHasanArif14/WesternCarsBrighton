@@ -33,7 +33,7 @@ export default function MobileStickyCTA() {
             href={SITE.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-[2] inline-flex items-center justify-center gap-2 rounded-xl bg-sand-400 px-4 py-3 text-sm font-semibold text-white-900 shadow-[0_4px_14px_rgba(212,163,115,0.4)]"
+            className="flex-[2] inline-flex items-center justify-center gap-2 rounded-xl bg-sand-400 px-4 py-3 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(212,163,115,0.4)]"
           >
             Book Online
             <ArrowRight className="w-4 h-4" />

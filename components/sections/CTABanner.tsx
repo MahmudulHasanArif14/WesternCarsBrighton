@@ -30,7 +30,7 @@ export default function CTABanner() {
             href={SITE.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-lg px-8 py-4 group"
+            className="btn-primary text-white text-lg px-8 py-4 group"
           >
             Book Online Now
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

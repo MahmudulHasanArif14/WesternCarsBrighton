@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import {
   Check,
@@ -320,13 +321,13 @@ export default function AboutPage() {
               Book Your Journey
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a
+            <Link
               href="/contact-us/"
               className="btn bg-white/10 text-white border border-white/20 hover:bg-white/20 px-8 py-4 backdrop-blur-sm"
             >
               <MapPin className="w-5 h-5" />
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </section>

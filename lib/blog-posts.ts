@@ -6,7 +6,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi from Brighton to Gatwick Airport Cost?",
     excerpt:
       "A clear breakdown of taxi fares from Brighton & Hove to Gatwick — what affects the price and how to get a fixed quote.",
-    metaTitle: "Taxi from Brighton to Gatwick Cost | 2026 Guide | Western Cars",
+    metaTitle: "Taxi from Brighton to Gatwick Cost | Western Cars",
     metaDescription:
       "How much is a taxi from Brighton to Gatwick Airport? Fixed fares, vehicle options, and what affects the price. Call 01273 220220 for a quote.",
     date: "2024-08-15",

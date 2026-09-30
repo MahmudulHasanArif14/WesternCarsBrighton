@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: "Terms & Conditions | Western Cars Brighton Private Hire",
   description:
     "Standard terms and conditions of sale for Western Cars Private Hire Limited. Booking, carriage, cancellation, privacy, and general application clauses.",
-  alternates: { canonical: `${SITE.url}/terms-conditions/` },
+  alternates: { canonical: `${SITE.url}/terms/` },
   openGraph: {
     title: "Terms & Conditions | Western Cars Brighton",
     description:
       "Standard terms and conditions for Western Cars Brighton private hire bookings.",
-    url: `${SITE.url}/terms-conditions/`,
+    url: `${SITE.url}/terms/`,
     type: "article",
   },
   robots: { index: true, follow: true },

@@ -72,10 +72,9 @@ export default function ServicesGrid() {
             {/* Background image */}
             <Image
               src="/images/gatwickdrop.webp"
-              alt="Airport transfer from Brighton to Gatwick"
+              alt="Brighton to Gatwick"
               sizes="(max-width: 1024px) 100vw, 50vw"
               fill
-              priority
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
 

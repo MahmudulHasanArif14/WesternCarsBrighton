@@ -91,7 +91,7 @@ export default async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/terms-conditions/"
+                  href="/terms/"
                   className="hover:text-white-50 transition-colors"
                 >
                   Terms &amp; Conditions

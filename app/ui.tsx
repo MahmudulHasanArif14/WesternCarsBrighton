@@ -38,12 +38,11 @@ export function Header() {
             onClick={() => setOpen(false)}
           >
             <Image
-              src="/logo.png"
+              src="/images/logo.png"
               alt="Western Cars Logo"
               width={48}
               height={48}
               className="h-12 w-12 object-contain"
-              priority
             />
             <span>
               <span className="block text-lg font-black tracking-tight text-[#071a2f]">

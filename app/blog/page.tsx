@@ -85,7 +85,6 @@ export default function BlogIndexPage() {
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    priority
                   />
                   <span className="absolute top-5 left-5 badge-sand bg-white/95 backdrop-blur-sm">
                     Featured

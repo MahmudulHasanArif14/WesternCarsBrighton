@@ -8,13 +8,17 @@ const COOKIE_KEY = "westerncars_cookie_consent";
 
 type ConsentValue = "accepted" | "rejected" | null;
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
-  const [consent, setConsent] = useState<ConsentValue>(null);
 
   useEffect(() => {
     const stored = localStorage.getItem(COOKIE_KEY) as ConsentValue;
-    setConsent(stored);
     if (!stored) {
       // Small delay so it doesn't flash on first paint
       const t = setTimeout(() => setVisible(true), 800);
@@ -24,11 +28,9 @@ export default function CookieConsent() {
 
   const handleAccept = () => {
     localStorage.setItem(COOKIE_KEY, "accepted");
-    setConsent("accepted");
     setVisible(false);
-    // If you use Google Analytics, fire the consent update here:
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("consent", "update", {
+    if (window.gtag) {
+      window.gtag("consent", "update", {
         analytics_storage: "granted",
         ad_storage: "granted",
       });
@@ -37,17 +39,16 @@ export default function CookieConsent() {
 
   const handleReject = () => {
     localStorage.setItem(COOKIE_KEY, "rejected");
-    setConsent("rejected");
     setVisible(false);
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("consent", "update", {
+    if (window.gtag) {
+      window.gtag("consent", "update", {
         analytics_storage: "denied",
         ad_storage: "denied",
       });
     }
   };
 
-  if (!visible || consent) return null;
+  if (!visible) return null;
 
   return (
     <div
@@ -104,7 +105,7 @@ export default function CookieConsent() {
                 </strong>
                 , you agree to our{" "}
                 <Link
-                  href="/terms-conditions/"
+                  href="/terms/"
                   className="font-medium text-ocean-700 underline decoration-sand-400 decoration-2 underline-offset-2 hover:decoration-ocean-600"
                 >
                   Terms &amp; Conditions

@@ -134,17 +134,16 @@ export function Hero() {
                         : "sm:pr-5"
                     }
                   >
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-[#1F6FEB] sm:h-11 sm:w-11">
-                      <Icon
-                        className={`h-5 w-5 ${
-                          stat.value === "stars" ? "fill-[#1F6FEB]" : ""
-                        }`}
-                        aria-hidden="true"
-                      />
-                    </span>
-
-                    <dt className="mt-2.5 text-[13px] text-slate-600 sm:text-sm">
-                      {stat.label}
+                    <dt className="text-[13px] text-slate-600 sm:text-sm">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-[#1F6FEB] sm:h-11 sm:w-11">
+                        <Icon
+                          className={`h-5 w-5 ${
+                            stat.value === "stars" ? "fill-[#1F6FEB]" : ""
+                          }`}
+                          aria-hidden="true"
+                        />
+                      </span>
+                      <span className="mt-2.5 block">{stat.label}</span>
                     </dt>
 
                     <dd className="mt-0.5 font-medium text-slate-800">

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   title: {
     default:
       "Taxi Brighton | 24/7 Local Taxi & Airport Transfers | Western Cars",
-    template: "%s | Western Cars Brighton",
+    template: "%s",
   },
   description:
     "Reliable 24/7 taxi service in Brighton & Hove. Local journeys, fixed-price airport transfers, corporate accounts and event hire. Call 01273 220220.",
@@ -53,9 +53,7 @@ export const metadata: Metadata = {
       "Reliable 24/7 taxi service in Brighton & Hove. Fixed-price airport transfers, corporate accounts and event hire.",
     images: [
       {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/brighton-pier.jpg",
         alt: "Western Cars Brighton private hire taxi",
       },
     ],
@@ -64,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Western Cars Brighton | 24/7 Taxi & Airport Transfers",
     description: "Reliable 24/7 taxi service in Brighton & Hove.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/brighton-pier.jpg"],
   },
   robots: {
     index: true,
@@ -126,13 +124,13 @@ export default function RootLayout({
 
         <AnnouncementBar />
         <Header />
-        <main id="main" className="pb-20 lg:pb-0">
+        <main id="main" className=" lg:pb-0">
           {children}
         </main>
         <Footer />
         <MobileStickyCTA />
         <CookieConsent />
-        <Analytics />
+        {process.env.VERCEL === "1" && <Analytics />}
       </body>
     </html>
   );

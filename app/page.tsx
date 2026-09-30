@@ -7,6 +7,7 @@ import FAQ from "@/components/sections/FAQ";
 import CTABanner from "@/components/sections/CTABanner";
 import { GENERAL_FAQS } from "@/lib/faqs";
 import { faqSchema } from "@/lib/schema";
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function HomePage() {
   return (
@@ -18,12 +19,24 @@ export default function HomePage() {
         }}
       />
       <Hero />
-      <TrustSignals />
-      <ServicesGrid />
-      <WhyChooseUs />
-      <Testimonials />
-      <FAQ faqs={GENERAL_FAQS} title="Frequently Asked Questions" />
-      <CTABanner />
+      <Reveal>
+        <TrustSignals />
+      </Reveal>
+      <Reveal delay={60}>
+        <ServicesGrid />
+      </Reveal>
+      <Reveal delay={40}>
+        <WhyChooseUs />
+      </Reveal>
+      <Reveal delay={40}>
+        <Testimonials />
+      </Reveal>
+      <Reveal>
+        <FAQ faqs={GENERAL_FAQS} title="Frequently Asked Questions" />
+      </Reveal>
+      <Reveal delay={50}>
+        <CTABanner />
+      </Reveal>
     </>
   );
 }

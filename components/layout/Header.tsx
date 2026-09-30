@@ -37,14 +37,12 @@ export default function Header() {
             <Link
               href="/"
               className="group flex items-center gap-2.5 shrink-0"
-              aria-label="Western Cars Brighton home"
             >
               <Image
                 src="/images/logo.png"
-                alt="Western Cars Brighton logo"
+                alt=""
                 width={40}
                 height={40}
-                priority
                 className="w-10 h-10 rounded-xl object-contain"
               />
               <span className="flex flex-col leading-none">

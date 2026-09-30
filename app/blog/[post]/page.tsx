@@ -8,7 +8,6 @@ import {
   Calendar,
   Clock,
   User,
-  Share2,
   Tag,
   Phone,
 } from "lucide-react";

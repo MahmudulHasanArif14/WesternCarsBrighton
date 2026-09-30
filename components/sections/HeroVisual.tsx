@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Caveat } from "next/font/google";
 import {
   MapPin,
   Menu,
@@ -10,14 +9,7 @@ import {
   Home,
   ClipboardList,
   User,
-  Navigation,
 } from "lucide-react";
-
-const script = Caveat({
-  subsets: ["latin"],
-  weight: ["500", "600"],
-  display: "swap",
-});
 
 const coverageRows = [
   ["East Grinstead", "Crawley", "Horsham", "Haywards Heath"],
@@ -42,7 +34,6 @@ export default function HeroVisual() {
           src="/images/brighton-airport.jpg"
           alt="Black Western Cars private hire saloon outside the airport terminal"
           fill
-          priority
           sizes="(min-width: 1024px) 58vw, 100vw"
           className="
             object-cover object-[72%_60%] 
@@ -91,7 +82,6 @@ export default function HeroVisual() {
                 src="/images/logo.png"
                 alt="Western Cars logo"
                 fill
-                priority
                 sizes="24px"
                 className="object-contain"
               />
@@ -110,7 +100,6 @@ export default function HeroVisual() {
             src="/images/map.png"
             alt="Map showing the booking route from Gatwick to Brighton"
             fill
-            priority
             sizes="450px"
             className="object-cover object-center"
           />
@@ -223,7 +212,6 @@ export default function HeroVisual() {
           src="/images/brighton-pier.jpg"
           alt="Brighton Pier at sunset"
           fill
-          priority
           sizes="230px"
           className="object-cover "
         />
@@ -251,7 +239,6 @@ export default function HeroVisual() {
           src="/images/gatwick-airport.jpg"
           alt="Aircraft on the apron at Gatwick Airport"
           fill
-          priority
           sizes="180px"
           className="object-cover"
         />
@@ -276,7 +263,7 @@ export default function HeroVisual() {
         aria-hidden="true"
       >
         <p
-          className={`${script.className} text-right text-[26px] font-semibold leading-[1.05] text-blue-700 xl:text-[32px]`}
+          className="text-right font-serif text-[26px] font-semibold italic leading-[1.05] text-blue-700 xl:text-[32px]"
         >
           Airport Transfers
           <br />

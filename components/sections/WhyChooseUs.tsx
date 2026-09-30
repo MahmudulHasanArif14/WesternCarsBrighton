@@ -53,7 +53,6 @@ export default function WhyChooseWesternCars() {
           src="/images/brighton-seafront.png"
           alt="Brighton seafront with Western Cars vehicle"
           fill
-          priority
           sizes="(min-width: 1280px) 1280px, 100vw"
           className="object-cover object-center"
         />
@@ -135,7 +134,6 @@ export default function WhyChooseWesternCars() {
           src="/images/brighton-seafront.png"
           alt="Brighton seafront with Western Cars vehicle"
           fill
-          priority
           sizes="100vw"
           className="object-cover object-center"
         />

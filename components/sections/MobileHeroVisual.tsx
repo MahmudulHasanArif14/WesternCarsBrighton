@@ -41,8 +41,7 @@ export default function MobileHeroVisual() {
             src="/images/brighton-airport.jpg"
             alt=""
             fill
-            priority
-            sizes="(max-width: 448px) 100vw, 448px"
+            sizes="(max-width: 640px) calc(100vw - 2.5rem), (max-width: 768px) calc(100vw - 4rem), 512px"
             className="
               object-cover object-[72%_60%]
               [-webkit-mask-image:linear-gradient(to_bottom,#000_45%,transparent_100%)]
@@ -60,7 +59,7 @@ export default function MobileHeroVisual() {
                 src="/images/brighton-pier.jpg"
                 alt="Brighton Pier at sunset"
                 fill
-                sizes="(min-width: 1280px) 1280px, 100vw"
+                sizes="(max-width: 640px) 46vw, 180px"
                 className="object-cover"
               />
             </div>
@@ -70,7 +69,7 @@ export default function MobileHeroVisual() {
                 src="/images/gatwick-airport.jpg"
                 alt="Aircraft on the apron at Gatwick Airport"
                 fill
-                sizes="(min-width: 1280px) 1280px, 100vw"
+                sizes="(max-width: 640px) 42vw, 170px"
                 className="object-cover"
               />
             </div>
@@ -91,7 +90,7 @@ export default function MobileHeroVisual() {
                     src="/images/logo.png"
                     alt="Western Cars logo"
                     fill
-                    sizes="(min-width: 1280px) 1280px, 100vw"
+                    sizes="24px"
                     className="object-contain"
                   />
                 </div>
@@ -112,7 +111,7 @@ export default function MobileHeroVisual() {
                 src="/images/map.png"
                 alt="Map showing the booking route from Gatwick to Brighton"
                 fill
-                sizes="(min-width: 1280px) 1280px, 100vw"
+                sizes="(min-width: 640px) 176px, 162px"
                 className="object-cover object-center"
               />
             </div>
@@ -167,7 +166,7 @@ export default function MobileHeroVisual() {
                     aria-hidden="true"
                   />
                   <span
-                    className={`text-[6px] ${active ? "font-semibold text-blue-600" : "text-slate-400"}`}
+                    className={`text-[7px] ${active ? "font-semibold text-blue-600" : "text-slate-600"}`}
                   >
                     {label}
                   </span>

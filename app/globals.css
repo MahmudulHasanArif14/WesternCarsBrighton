@@ -248,6 +248,24 @@
 
 
 @layer components {
+    .motion-reveal {
+        transition:
+            opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+            transform 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+    }
+
+    .motion-reveal[data-reveal="hidden"] {
+        opacity: 0;
+        transform: translateY(22px);
+        will-change: opacity, transform;
+    }
+
+    .motion-reveal[data-reveal="visible"] {
+        opacity: 1;
+        transform: translateY(0);
+        will-change: auto;
+    }
+
     .prose-western {
         @apply text-ink-700 leading-relaxed;
     }
@@ -304,4 +322,5 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+
 }
