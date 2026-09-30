@@ -34,7 +34,7 @@ export function Hero() {
       {/* =====================================================
           LEFT — CONTENT
       ====================================================== */}
-      <div className="container relative z-20 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+      <div className="container relative z-20 mx-auto lg:mx-20 w-full max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="flex flex-col justify-center py-10 sm:py-12 lg:min-h-[640px] lg:py-14 lg:pb-32 xl:min-h-[700px]">
           <div className="max-w-full lg:max-w-[46%] xl:max-w-[640px]">
             {/* Licensed badge */}
@@ -51,8 +51,7 @@ export function Hero() {
 
             {/* Heading */}
             <h1 className="mt-6 text-[34px] font-extrabold leading-[1.05] tracking-[-0.025em] text-[#0B1B3A] sm:text-[44px] sm:leading-[1.02] sm:tracking-[-0.03em] md:text-5xl lg:text-[52px] xl:text-[62px] 2xl:text-[70px]">
-              Your Trusted Taxi
-              <br />
+              Your Trusted Taxi <br />
               in <span className="text-[#1F6FEB]">Brighton &amp; Hove</span>
             </h1>
 

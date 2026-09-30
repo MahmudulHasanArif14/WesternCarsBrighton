@@ -63,7 +63,7 @@ const SECTIONS: Section[] = [
       {
         type: "subclause",
         number: "1.2",
-        text: "A contract will only come in to being upon the acceptance of the Provider of the reservation and the following conditions shall be deemed to be incorporated in the contract. The passenger accepts these terms & conditions by placing a reservation, booking with the provider via but not limited to the providers; web site (https://westerncarsbrighton.co.uk), via telephone, or via any representative agent.",
+        text: "A contract will only come in to being upon the acceptance of the Provider of the reservation and the following conditions shall be deemed to be incorporated in the contract. The passenger accepts these terms & conditions by placing a reservation, booking with the provider via but not limited to the providers; web site (https://www.westerncarsbrighton.co.uk), via telephone, or via any representative agent.",
       },
       {
         type: "subclause",

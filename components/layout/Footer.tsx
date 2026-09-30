@@ -97,6 +97,22 @@ export default async function Footer() {
                   Terms &amp; Conditions
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/terms/#privacy"
+                  className="hover:text-white-50 transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact-us/"
+                  className="hover:text-white-50 transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 

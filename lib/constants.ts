@@ -3,7 +3,7 @@ import type { NavLink } from "@/types";
 export const SITE = {
   name: "Western Cars Brighton",
   legalName: "Western Cars Private Hire Limited",
-  url: "https://westerncarsbrighton.co.uk",
+  url: "https://www.westerncarsbrighton.co.uk",
   phone: "01273 220220",
   phoneLink: "tel:01273220220",
   email: "info@westerncarsbrighton.co.uk",

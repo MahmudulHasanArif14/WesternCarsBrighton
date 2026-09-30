@@ -33,6 +33,7 @@ export default function HeroVisual() {
         <Image
           src="/images/brighton-airport.jpg"
           alt="Black Western Cars private hire saloon outside the airport terminal"
+          loading="eager"
           fill
           sizes="(min-width: 1024px) 58vw, 100vw"
           className="
@@ -262,9 +263,7 @@ export default function HeroVisual() {
         className="absolute right-[2%] top-[15%] z-30 hidden -rotate-[8deg] md:block"
         aria-hidden="true"
       >
-        <p
-          className="text-right font-serif text-[26px] font-semibold italic leading-[1.05] text-blue-700 xl:text-[32px]"
-        >
+        <p className="text-right font-serif text-[26px] font-semibold italic leading-[1.05] text-blue-700 xl:text-[32px]">
           Airport Transfers
           <br />
           to Local Journeys

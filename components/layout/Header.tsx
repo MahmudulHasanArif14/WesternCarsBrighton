@@ -40,9 +40,10 @@ export default function Header() {
             >
               <Image
                 src="/images/logo.png"
-                alt=""
+                alt="Western Cars Brighton logo"
                 width={40}
                 height={40}
+                preload
                 className="w-10 h-10 rounded-xl object-contain"
               />
               <span className="flex flex-col leading-none">

@@ -39,7 +39,8 @@ export default function MobileHeroVisual() {
         <div className="absolute inset-x-0 top-0 h-[420px]" aria-hidden="true">
           <Image
             src="/images/brighton-airport.jpg"
-            alt=""
+            alt="Brighton Airport terminal and aircraft"
+            loading="eager"
             fill
             sizes="(max-width: 640px) calc(100vw - 2.5rem), (max-width: 768px) calc(100vw - 4rem), 512px"
             className="

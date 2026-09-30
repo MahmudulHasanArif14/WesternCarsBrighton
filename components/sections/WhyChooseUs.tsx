@@ -161,11 +161,11 @@ export default function WhyChooseWesternCars() {
               Why choose us
             </p>
 
-            <h2 className="font-display text-5xl font-semibold leading-tight tracking-tight text-white lg:text-[52px]">
+            <div className="font-display text-5xl font-semibold leading-tight tracking-tight text-white lg:text-[52px]">
               Why Choose <span className="text-cyan-400">Western Cars</span>
               <br />
               Brighton?
-            </h2>
+            </div>
 
             <p className="mt-5 max-w-lg text-lg leading-7 text-white/75">
               A local, trusted taxi service with a commitment to safety, comfort
@@ -198,9 +198,9 @@ export default function WhyChooseWesternCars() {
                     />
                   </div>
 
-                  <h3 className="mt-5 text-[17px] font-semibold text-white">
+                  <p className="mt-5 text-[17px] font-semibold text-white">
                     {item.title}
-                  </h3>
+                  </p>
 
                   <p className="mt-2 max-w-45 text-sm leading-5 text-white/65">
                     {item.description}

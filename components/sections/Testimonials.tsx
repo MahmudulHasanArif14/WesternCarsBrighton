@@ -1,10 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import {
   Star,
   ShieldCheck,
   Clock3,
   Car,
   Headphones,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 interface Review {
@@ -122,9 +128,34 @@ const bottomFeatures = [
   },
 ];
 
+// Duplicate for seamless infinite scroll
+const infiniteReviews = [...reviews, ...reviews, ...reviews, ...reviews];
+
 export default function Testimonials() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [currentMobileIndex, setCurrentMobileIndex] = useState(0);
+
+  // Mobile controls
+  const nextSlide = () => {
+    setCurrentMobileIndex((prev) =>
+      prev === reviews.length - 1 ? 0 : prev + 1,
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentMobileIndex((prev) =>
+      prev === 0 ? reviews.length - 1 : prev - 1,
+    );
+  };
+
   return (
-    <section
+    <motion.section
+      ref={sectionRef}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
       className="relative overflow-hidden bg-gradient-to-b from-white via-white to-blue-50/70"
     >
       {/* ================= BACKGROUND GLOWS ================= */}
@@ -140,7 +171,12 @@ export default function Testimonials() {
         <div className="mx-auto max-w-7xl px-6 pt-24 lg:px-10">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             {/* LEFT */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-5 py-2 text-sm font-semibold tracking-wider text-[#0B1B3A] shadow-sm">
                 CLIENT REVIEWS
               </span>
@@ -178,10 +214,16 @@ export default function Testimonials() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* RIGHT — Car visual with floating cards */}
-            <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9 }}
+              className="relative"
+            >
               {/* Glow behind car */}
               <div className="absolute right-10 top-6 h-[420px] w-[420px] rounded-full bg-blue-200/45 blur-[130px]" />
 
@@ -191,6 +233,7 @@ export default function Testimonials() {
                 alt="Western Cars Brighton executive Mercedes private hire vehicle"
                 width={900}
                 height={700}
+                priority
                 className="relative z-10 w-full object-contain drop-shadow-[0_45px_90px_rgba(15,23,42,0.25)]"
               />
 
@@ -210,7 +253,7 @@ export default function Testimonials() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -237,15 +280,94 @@ export default function Testimonials() {
             </div>
           </div>
 
-          <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:thin]">
-            {reviews.map((review, index) => (
-              <div
-                key={`${index}-${review.name}`}
-                className="w-[min(320px,calc(100vw-3rem))] shrink-0 snap-start"
+          {/* DESKTOP — Continuous auto-scroll */}
+          <div className="hidden md:block relative">
+            <div
+              className="overflow-hidden"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              <motion.div
+                className="flex w-max gap-6"
+                animate={{ x: ["0%", "-25%"] }}
+                transition={{
+                  duration: 60,
+                  ease: "linear",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                style={{
+                  animationPlayState: isPaused ? "paused" : "running",
+                }}
               >
-                <ReviewCard review={review} />
+                {infiniteReviews.map((review, index) => (
+                  <div
+                    key={`${index}-${review.name}`}
+                    className="w-[320px] shrink-0"
+                  >
+                    <ReviewCard review={review} />
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Fade edges */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-blue-50/60 to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-blue-50/60 to-transparent" />
+          </div>
+
+          {/* MOBILE — Manual carousel */}
+          <div className="md:hidden relative">
+            <div className="overflow-hidden">
+              <motion.div
+                className="flex"
+                animate={{ x: `-${currentMobileIndex * 100}%` }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                {reviews.map((review, index) => (
+                  <div
+                    key={`${index}-${review.name}`}
+                    className="w-full shrink-0 px-1"
+                  >
+                    <ReviewCard review={review} />
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Mobile controls */}
+            <div className="mt-6 flex items-center justify-between px-4">
+              <button
+                onClick={prevSlide}
+                className="rounded-full bg-white p-2 text-slate-700 shadow-sm ring-1 ring-slate-200 transition-colors hover:bg-blue-50"
+                aria-label="Previous review"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+
+              <div className="flex gap-1.5">
+                {reviews.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentMobileIndex(index)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      index === currentMobileIndex
+                        ? "w-6 bg-blue-500"
+                        : "w-1.5 bg-ink-300 hover:bg-slate-400"
+                    }`}
+                    aria-label={`Go to review ${index + 1}`}
+                  />
+                ))}
               </div>
-            ))}
+
+              <button
+                onClick={nextSlide}
+                className="rounded-full bg-white p-2 text-slate-700 shadow-sm ring-1 ring-slate-200 transition-colors hover:bg-blue-50"
+                aria-label="Next review"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
           </div>
         </div>
 
@@ -255,11 +377,15 @@ export default function Testimonials() {
         <div className="mx-auto mt-24 max-w-7xl px-6 pb-24 lg:px-10">
           <div className="rounded-[28px] border border-slate-100 bg-white p-10 shadow-[0_20px_60px_rgba(11,27,58,0.10)] lg:p-14">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-              {bottomFeatures.map((feature) => {
+              {bottomFeatures.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
-                  <div
-                    key={feature.title}
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
                     className="group flex flex-col items-center rounded-3xl bg-white p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-blue-50"
                   >
                     <div className="rounded-2xl bg-blue-50 p-3 text-blue-800 transition-colors duration-300 group-hover:bg-blue-500 group-hover:text-[#0B1B3A]">
@@ -271,21 +397,21 @@ export default function Testimonials() {
                     <p className="mt-1 text-sm text-slate-500">
                       {feature.subtitle}
                     </p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 /* ================= REVIEW CARD ================= */
 function ReviewCard({ review }: { review: Review }) {
   return (
-    <div
+    <motion.div
       className="
         flex
         h-[280px]
@@ -341,7 +467,7 @@ function ReviewCard({ review }: { review: Review }) {
             src={review.image}
             alt={review.name}
             fill
-            sizes="(min-width: 1280px) 1280px, 100vw"
+            sizes="36px"
             className="object-cover"
             unoptimized
           />
@@ -365,6 +491,6 @@ function ReviewCard({ review }: { review: Review }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

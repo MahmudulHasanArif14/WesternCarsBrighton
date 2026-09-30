@@ -26,8 +26,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default:
-      "Taxi Brighton | 24/7 Local Taxi & Airport Transfers | Western Cars",
+    default: "Taxi Brighton | 24/7 Airport Transfers | Western Cars",
     template: "%s",
   },
   description:
