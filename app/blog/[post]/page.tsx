@@ -16,6 +16,7 @@ import ReadingProgress from "@/components/blog/ReadingProgress";
 import ShareButtons from "@/components/blog/ShareButtons";
 import { BLOG_POSTS, getPostBySlug } from "@/lib/blog-posts";
 import { SITE } from "@/lib/constants";
+import { jsonLdString } from "@/lib/schema";
 
 /* ---------------------------------------------
    Static params — one entry per blog post
@@ -104,6 +105,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${canonical}#article`,
     headline: post.title,
     description: post.excerpt,
     image: cover,
@@ -122,18 +124,29 @@ export default async function BlogPostPage({ params }: PageProps) {
     inLanguage: "en-GB",
   };
 
-  const breadcrumbSchema = {
+  const pageSchema = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+    "@graph": [
+      articleSchema,
       {
-        "@type": "ListItem",
-        position: 2,
-        name: "Blog",
-        item: `${SITE.url}/blog/`,
+        "@type": "BreadcrumbList",
+        "@id": `${canonical}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE.url}/` },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: `${SITE.url}/blog/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: post.title,
+            item: canonical,
+          },
+        ],
       },
-      { "@type": "ListItem", position: 3, name: post.title, item: canonical },
     ],
   };
 
@@ -141,11 +154,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(pageSchema) }}
       />
 
       <ReadingProgress />

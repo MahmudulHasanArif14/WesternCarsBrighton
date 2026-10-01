@@ -51,8 +51,8 @@ export function Hero() {
 
             {/* Heading */}
             <h1 className="mt-6 text-[34px] font-extrabold leading-[1.05] tracking-[-0.025em] text-[#0B1B3A] sm:text-[44px] sm:leading-[1.02] sm:tracking-[-0.03em] md:text-5xl lg:text-[52px] xl:text-[62px] 2xl:text-[70px]">
-              Your Trusted Taxi <br />
-              in <span className="text-[#1F6FEB]">Brighton &amp; Hove</span>
+              Taxi &amp; Private Hire in{" "}
+              <span className="text-[#1F6FEB]">Brighton and Hove</span>
             </h1>
 
             {/* Description */}

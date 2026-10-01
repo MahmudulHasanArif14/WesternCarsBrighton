@@ -8,7 +8,7 @@ import FAQ from "@/components/sections/FAQ";
 import CTABanner from "@/components/sections/CTABanner";
 
 import { SERVICES, getServiceBySlug } from "@/lib/services";
-import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { jsonLdString, servicePageSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
@@ -70,12 +70,12 @@ const CONTEXT_LINKS: Record<
   },
   "event-taxi-hire-brighton": {
     text: "Planning a big day out?",
-    href: "/book/",
+    href: SITE.bookingUrl,
     label: "Get a fixed price →",
   },
   "wheelchair-accessible-taxi-brighton": {
     text: "Need a ride today?",
-    href: "/book/",
+    href: SITE.bookingUrl,
     label: "Book an accessible taxi →",
   },
   "local-taxi-brighton-hove": {
@@ -159,27 +159,7 @@ export default async function ServicePage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema(service)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema(service.faqs)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbSchema([
-              { name: "Home", url: SITE.url },
-              {
-                name: service.shortTitle,
-                url: `${SITE.url}/${service.slug}/`,
-              },
-            ]),
-          ),
+          __html: jsonLdString(servicePageSchema(service)),
         }}
       />
 
@@ -216,12 +196,23 @@ export default async function ServicePage({ params }: PageProps) {
                   {contextLink && (
                     <p className="text-base">
                       {contextLink.text}{" "}
-                      <Link
-                        href={contextLink.href}
-                        className="font-semibold text-[#2563EB] underline decoration-[#93C5FD] decoration-2 underline-offset-4 transition-colors hover:text-[#1D4ED8]"
-                      >
-                        {contextLink.label}
-                      </Link>
+                      {contextLink.href.startsWith("/") ? (
+                        <Link
+                          href={contextLink.href}
+                          className="font-semibold text-[#2563EB] underline decoration-[#93C5FD] decoration-2 underline-offset-4 transition-colors hover:text-[#1D4ED8]"
+                        >
+                          {contextLink.label}
+                        </Link>
+                      ) : (
+                        <a
+                          href={contextLink.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-[#2563EB] underline decoration-[#93C5FD] decoration-2 underline-offset-4 transition-colors hover:text-[#1D4ED8]"
+                        >
+                          {contextLink.label}
+                        </a>
+                      )}
                     </p>
                   )}
                 </div>
@@ -306,8 +297,10 @@ export default async function ServicePage({ params }: PageProps) {
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <Link
-                    href="/book/"
+                  <a
+                    href={SITE.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#2563EB] px-7 py-4 text-sm font-semibold text-white shadow-[0_8px_25px_rgba(37,99,235,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1D4ED8] hover:shadow-[0_12px_30px_rgba(37,99,235,0.35)]"
                   >
                     Book online
@@ -325,7 +318,7 @@ export default async function ServicePage({ params }: PageProps) {
                         d="M5 12h14M13 6l6 6-6 6"
                       />
                     </svg>
-                  </Link>
+                  </a>
 
                   <a
                     href={SITE.phoneLink}

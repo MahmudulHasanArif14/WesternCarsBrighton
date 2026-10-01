@@ -6,7 +6,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import CTABanner from "@/components/sections/CTABanner";
 import { GENERAL_FAQS } from "@/lib/faqs";
-import { faqSchema } from "@/lib/schema";
+import { homePageSchema, jsonLdString } from "@/lib/schema";
 import { Reveal } from "@/components/ui/Reveal";
 
 export default function HomePage() {
@@ -15,7 +15,7 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema(GENERAL_FAQS)),
+          __html: jsonLdString(homePageSchema(GENERAL_FAQS)),
         }}
       />
       <Hero />

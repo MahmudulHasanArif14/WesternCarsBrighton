@@ -18,7 +18,8 @@ export const SITE = {
   companyNumber: "09243357",
   bookingUrl: "https://westerncars.webbooker.icabbi.com",
   social: {
-    facebook: "https://www.facebook.com/westerncarsbrighton/?locale=en_GB",
+    googleBusiness: "https://share.google/0ix4KRLejQNM3Z67x",
+    facebook: "https://www.facebook.com/westerncarsbrighton/",
   },
 } as const;
 

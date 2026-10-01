@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
   cacheComponents: true, // Next.js 16.3 Cache Components
+  trailingSlash: true,
 
   images: {
     formats: ["image/avif", "image/webp"],
@@ -18,8 +19,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/our-services",
-        destination: "/airport-transfers-brighton",
+        source: "/our-services/",
+        destination: "/airport-transfers-brighton/",
         permanent: true,
       },
     ];

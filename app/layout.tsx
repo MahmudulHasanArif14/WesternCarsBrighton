@@ -5,7 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileStickyCTA from "@/components/layout/MobileStickyCTA";
 import { SITE } from "@/lib/constants";
-import { localBusinessSchema, organizationSchema } from "@/lib/schema";
+import { jsonLdString, siteSchema } from "@/lib/schema";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import { Analytics } from "@vercel/analytics/next";
 import CookieConsent from "@/components/layout/CookieConsent";
@@ -26,43 +26,32 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Taxi Brighton | 24/7 Airport Transfers | Western Cars",
+    default: "Western Cars Brighton | Taxi & Private Hire in Brighton and Hove",
     template: "%s",
   },
   description:
-    "Reliable 24/7 taxi service in Brighton & Hove. Local journeys, fixed-price airport transfers, corporate accounts and event hire. Call 01273 220220.",
-  keywords: [
-    "taxi Brighton",
-    "taxi Hove",
-    "Gatwick airport taxi Brighton",
-    "Brighton to Gatwick transfer",
-    "corporate taxi Brighton",
-    "wheelchair accessible taxi Brighton",
-    "Brighton taxi service",
-    "Brighton airport transfer",
-    "Brighton taxi company",
-    "Brighton taxi booking",
-  ],
+    "Taxi and private hire services in Brighton and Hove, with local journeys and airport transfers to Gatwick, Heathrow and other UK airports. Call 01273 220220.",
   openGraph: {
     type: "website",
     locale: "en_GB",
     url: SITE.url,
     siteName: SITE.name,
-    title: "Western Cars Brighton | 24/7 Taxi & Airport Transfers",
+    title: "Western Cars Brighton | Taxi & Private Hire",
     description:
-      "Reliable 24/7 taxi service in Brighton & Hove. Fixed-price airport transfers, corporate accounts and event hire.",
+      "Taxi and private hire services in Brighton and Hove, including local journeys and airport transfers to Gatwick and Heathrow.",
     images: [
       {
-        url: "/images/brighton-pier.jpg",
-        alt: "Western Cars Brighton private hire taxi",
+        url: "/images/hero.webp",
+        alt: "Western Cars Brighton taxi and private hire service",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Western Cars Brighton | 24/7 Taxi & Airport Transfers",
-    description: "Reliable 24/7 taxi service in Brighton & Hove.",
-    images: ["/images/brighton-pier.jpg"],
+    title: "Western Cars Brighton | Taxi & Private Hire",
+    description:
+      "Taxi and private hire services in Brighton and Hove, including local journeys and airport transfers.",
+    images: ["/images/hero.webp"],
   },
   robots: {
     index: true,
@@ -104,13 +93,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
+            __html: jsonLdString(siteSchema),
           }}
         />
       </head>
