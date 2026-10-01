@@ -7,7 +7,7 @@ import MobileStickyCTA from "@/components/layout/MobileStickyCTA";
 import { SITE } from "@/lib/constants";
 import { jsonLdString, siteSchema } from "@/lib/schema";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
-import { Analytics } from "@vercel/analytics/next";
+import Analytics from "@/components/layout/Analytics";
 import CookieConsent from "@/components/layout/CookieConsent";
 
 const inter = Inter({

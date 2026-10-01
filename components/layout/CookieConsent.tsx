@@ -29,10 +29,17 @@ export default function CookieConsent() {
   const handleAccept = () => {
     localStorage.setItem(COOKIE_KEY, "accepted");
     setVisible(false);
+
+    // Wake up consent-gated analytics (GA4)
+    window.dispatchEvent(new Event("cookie-consent:accepted"));
+
+    // Optional: Google Consent Mode v2 update
     if (window.gtag) {
       window.gtag("consent", "update", {
         analytics_storage: "granted",
         ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
       });
     }
   };
@@ -40,10 +47,16 @@ export default function CookieConsent() {
   const handleReject = () => {
     localStorage.setItem(COOKIE_KEY, "rejected");
     setVisible(false);
+
+    // Notify any listeners (not strictly needed for reject, but symmetric)
+    window.dispatchEvent(new Event("cookie-consent:rejected"));
+
     if (window.gtag) {
       window.gtag("consent", "update", {
         analytics_storage: "denied",
         ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
       });
     }
   };
@@ -56,18 +69,11 @@ export default function CookieConsent() {
       aria-modal="false"
       aria-labelledby="cookie-consent-title"
       aria-describedby="cookie-consent-description"
-      className="
-        fixed
-        inset-x-0
-        bottom-0
-        z-[90]
-        animate-fade-up
-      "
+      className="fixed inset-x-0 bottom-0 z-[90] animate-fade-up"
     >
-      {/* Backdrop tint on mobile for readability */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -top-40 bg-gradient-to-t from-ink-900/20 to-transparent pointer-events-none"
+        className="pointer-events-none absolute inset-0 -top-40 bg-gradient-to-t from-ink-900/20 to-transparent"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 pb-4 sm:px-6 sm:pb-6">
@@ -100,7 +106,7 @@ export default function CookieConsent() {
               >
                 Western Cars Brighton uses cookies to keep the site working and
                 to understand how visitors use it. By clicking{" "}
-                <strong className="font-semibold text-ink-800">
+                <strong className="font-semibold text-ink-900">
                   Accept all
                 </strong>
                 , you agree to our{" "}
